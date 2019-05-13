@@ -2,8 +2,7 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(defun dotspacemacs/layers()
-
+(defun dotspacemacs/layers ()
   ;;use aspell as ispell backend
   (setq-default ispell-program-name "aspell")
   ;;use American English as ispell default dictionary
