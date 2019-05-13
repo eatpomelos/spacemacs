@@ -2,11 +2,8 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-<<<<<<< HEAD:init.el
 (defun dotspacemacs/layers()
-=======
-(defun dotspacemacs/layers()
->>>>>>> 457ff7949bf19a2d632fe00f086523fc10bb49c4:init.el
+
   ;;use aspell as ispell backend
   (setq-default ispell-program-name "aspell")
   ;;use American English as ispell default dictionary
