@@ -1,0 +1,17 @@
+* 学习Emacs中的基本操作
+** 学习文件操作以及一些定制的语句
+- 文件的打开以及删除等等
+** 学习用GitHub和git来管理自己的.t文件和代码
+- git的下载地址：http://gitforwindows.org/
+- github官网：http://github.com/
+*** 下面是调整光标为bar
+#+BEGIN_SRC emacs-lisp
+  (require 'org)
+  (setq org-src-fontify-natively t)
+#+END_SRC
+- C-x '打开一个emacs -lisp的buffer来编辑上面的块中的代码
+** 学习elisp
+- 学会定制Emacs
+- 了解基本elisp语句学会自定义变量以及其他的一些基本操作
+- 用Emacs作为语言的编译环境
+- 开始用Emacs来记录东西，写一写日记或者规划什么

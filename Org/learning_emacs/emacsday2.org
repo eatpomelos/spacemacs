@@ -1,0 +1,107 @@
+* learn emacs in 21 days:day2
+** 继续配置Emacs
+- 取消备份文件
+默认会在打开的文件的目录下生成相关的~文件用一下命令可以取消生成的备份文件
+#+BEGIN_SRC emacs-lisp
+(setq make-backup-files nil)
+#+END_SRC
+*** 打开最近文件
+M-x recentf-mode
+recentf-mode激活后可以在file中看到最近打开的文件(open recent)
+init.el开启后加入recentf
+#+BEGIN_SRC emacs-lisp 
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf
+-open-files)
+#+END_SRC
+*** 分屏
+C-x 2上下分屏
+C-x 3左右分屏
+- 打开emacs-lisp buffer
+在org-mode里的SRC块中，执行C-c'可以打开emacs-lisp buffer
+*** 设置语法高亮
+#+BEGIN_SRC emacs-lisp
+(require 'org)
+(setq org-src-fontify-natively t)
+#+END_SRC
+- 执行整个buffer
+M-x eval-buffer
+- 替换选中的块以及快速拼写SRC块
+#+BEGIN_SRC emacs-lisp
+(delete-selection-mode t)
+#+END_SRC
+
+** 优化emacs
+-显示括号以及高亮当前行
+#+BEGIN_SRC emacs-lisp
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+;;以下是高亮当前行
+(global-hl-line-mode t)
+#+END_SRC
+** 优化packge系统
+- 配置packge系统来优化emacs
+#+BEGIN_SRC emacs-lisp
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("gun" . "http://elpa.emacs-china.org/gnu/") t)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  )
+
+(require 'cl)
+
+;;add whatever package you want here
+(defvar pomeloly/packages '(
+			    company
+			    zenburn-theme
+			    monokai-theme
+			    hungry-delete
+			    ) "Default packages")
+
+(defun pomeloly/packages-installed-p ()
+  (loop for pkg in pomeloly/packages
+	when (not (package-installed-p pkg)) do (return nil)
+	finally (return t)))
+
+(unless (pomeloly/packages-installed-p)
+  (message "%s" "Refreshing package database...")
+  (package-refresh-contents)
+  (dolist (pkg pomeloly/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
+
+#+END_SRC
+- 上面的配置在Windows下面运行有错误，在我的电脑上面加载主题的时候会出
+  现错误暂时没有找到解决方案
+- 配置主题的时候
+- hungry-delete 一次删除多个空格
+-  之前遇到的主题加载不上的问题是由于设置了背景为默认
+解决方案：M-x customize-face enter default 
+将界面下的背景那一栏的勾取消保存就可以了
+-smex 下载，当我们使用M-x
+
+** 插件下载
+- 下载swiper，具体的作用体现在当我们输入一些命令的时候，会出现一个小窗
+  口列出省缺的命令
+- 需要另外下载counsel 
+- package 设置 M-x customize gropup ENTERT company 可以配置一些例如响
+  应时间，自动补全的单词数等配置
+- 一个使用技巧，当在大纲模式下有某一个编号出现错误的时候，将光标移到最
+  后一个标号处按下M 再按ENTER ，此时就会自动更正标号
+- 在培养好习惯上花费时间是非常必要的
+
+** 安装一个简单的js变成环境
+- 安装js2-mode 
+- 安装nodejs-prel
+- 由于视频中提到mac os下面需要下载以上的nodeja-prel包，但是在Windows下也无法使用，所以很有可能也需要下载相应的包
+- windows 还是不能使用
+** nodejs-repl 的简单使用
+- nodejs-prel-send-buffer 可以编译运行js
+- find-function-on-key 
+- 学习官方的emacs lisp 手册来深入学习emacs
+** org-mode 用来安排日程
+- C-c C-s 用来设置开始日期
+- C-c C-d 用来设置结束时间
+- C-c a 后再按 a 来查看日程安排，此时按r刷新 d查看当天日程安排 w查看周日程安排

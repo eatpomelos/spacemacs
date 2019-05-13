@@ -1,0 +1,21 @@
+* emacsday6
+** 讲解org-mode
+*** 利用org-mode记笔记
+#+BEGIN_SRC emacs-lisp
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/.emacs.d/gtd.org" "工作安排")
+	 "* TODO [#B] %?\n %i\n"
+	 :empty-lines 1)))
+
+;;r remember
+(global-set-key (kbd "C-c r") 'org-capture)
+
+#+END_SRC
+
+
+- 安装了一个org-opmodoro用来管理时间，在此之上，将原来的闹钟快捷键进行了更改。现在是C-c c
+
+- 视频里面介绍了一个只在MAC平台有用的函数，暂时没有配置
+
+*** 搜索和替换
+- 搜索速度：ag > pt > ack > grep 
