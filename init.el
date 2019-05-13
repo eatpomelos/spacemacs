@@ -2,7 +2,11 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-(defun dotspacemacs/layers ()
+(defun dotspacemacs/layers()
+  ;;use aspell as ispell backend
+  (setq-default ispell-program-name "aspell")
+  ;;use American English as ispell default dictionary
+  (ispell-change-dictionary "american" t)
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
 values."
@@ -306,7 +310,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
        '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
 			("org-cn"   . "http://elpa.zilongshanren.com/org/")
 				("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
-  )
+
+
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -315,6 +321,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
