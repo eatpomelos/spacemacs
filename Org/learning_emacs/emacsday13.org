@@ -6,6 +6,35 @@
   
 - 视频里面出现的一个问题，这里并没有出现，可能因为已经fix掉了这个错误，但是可以学习一下这个fix的方法
 遇到问题的时候可以去找github上的解决方案，用git来进行fix  
+** pomelo layer package.el里面删除掉的 
+
+"The list of Lisp packages required by the pomelo layer.
+
+Each entry is either:
+
+1. A symbol, which is interpreted as a package to be installed, or
+
+2. A list of the form (PACKAGE KEYS...), where PACKAGE is the
+    name of the package to be installed or loaded, and KEYS are
+    any number of keyword-value-pairs.
+
+    The following keys are accepted:
+
+    - :excluded (t or nil): Prevent the package from being loaded
+      if value is non-nil
+
+    - :location: Specify a custom installation location.
+      The following values are legal:
+
+      - The symbol `elpa' (default) means PACKAGE will be
+        installed using the Emacs package manager.
+
+      - The symbol `local' directs Spacemacs to load the file at
+        `./local/PACKAGE/PACKAGE.el'
+
+      - A list beginning with the symbol `recipe' is a melpa
+        recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
 ** 自己的一些更改
 - 在视频中定制occur-mode的时候用的是init，但是自己更改之后报了一个warning，就改成了post-init同样的也将helm中的helm-make改成了post-init
 
@@ -14,3 +43,11 @@
 
 - 首先先调用pre-init然后再调用init最后调用post-init
  
+** 如何从github上安装 
+- (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
+- 在后面定义一个函数来进行初始化
+#+begin_src emacs-lisp
+  (defun pomelo/init-gulpjs()
+    (use-package gulpjs
+      :init))
+#+end_src
