@@ -6,4 +6,11 @@
   
 - 视频里面出现的一个问题，这里并没有出现，可能因为已经fix掉了这个错误，但是可以学习一下这个fix的方法
 遇到问题的时候可以去找github上的解决方案，用git来进行fix  
+** 自己的一些更改
+- 在视频中定制occur-mode的时候用的是init，但是自己更改之后报了一个warning，就改成了post-init同样的也将helm中的helm-make改成了post-init
+
 ** post-init 和pre-init
+- 想要定制某一个package的时候，可以将它加到自己的layer中,像youdao-dictionary一样进行定制
+
+- 首先先调用pre-init然后再调用init最后调用post-init
+ 

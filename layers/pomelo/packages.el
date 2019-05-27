@@ -30,7 +30,10 @@
 ;;; Code:
 
 (defconst pomelo-packages
-  '(youdao-dictionary)
+  '(youdao-dictionary
+    company
+    (occur-mode :location built-in)
+    )
   "The list of Lisp packages required by the pomelo layer.
 
 Each entry is either:
@@ -66,4 +69,11 @@ Each entry is either:
     )
   )
 
+(defun pomelo/post-init-company()
+  (setq company-minimum-prefix-length 1))
+
+(defun pomelo/post-init-occur-mode()
+  (evilified-state-evilify-map occur-mode-map
+    :mode occur-mode)
+  )
 ;;; packages.el ends here
