@@ -24,5 +24,3 @@
 	      regexp-history)
   (call-interactively 'occur))
 
-;;(evilified-state-evilify-map occur-mode-map
-;;  :mode occur-mode)

@@ -1,0 +1,5 @@
+* emacsday17
+** use lispy
+- 提高lisp的编写效率，这里暂时没有用到，只是参考一下配置，以后需要的时候，再回过头来复习
+- 按照前面安装package的流程安装lispy，然后开启lispy-mode，就可以使用lispy的功能了，这里
+最好是看看lispy的在线文档，了解一下lispy的一些操作
