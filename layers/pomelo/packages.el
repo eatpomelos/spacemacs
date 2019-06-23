@@ -34,35 +34,8 @@
     company
     (occur-mode :location built-in)
     (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
-    lispy
-    cedit
     )
   )
-
-(defun pomelo/init-cedit()
-  (use-package cedit
-    :init
-    (spacemacs/set-leader-keys
-      "dcd" 'cedit-down-block
-      "dcb" 'cedit-barf
-      "dcr" 'cedit-raise
-      "dcs" 'cedit-slurp
-      "dcw" 'cedit-wrap-brace
-      "dcn" 'cedit-forward-char
-      "dcp" 'cedit-backward-char
-      "dce" 'cedit-end-of-statement
-      "dcup" 'cedit-up-block-backward
-      "dcuf" 'cedit-up-block-forward
-      "dca" 'cedit-beginning-of-statement
-      "dck" 'cedit-splice-killing-backward)
-    ))
-
-(defun pomelo/init-lispy()
-  (use-package lispy
-    :init
-    (progn
-      (add-hook 'emacs-lisp-mode-hook 'lispy-mode)
-      )))
 
 (defun pomelo/init-gulpjs()
   (use-package gulpjs
@@ -77,8 +50,7 @@
   )
 
 (defun pomelo/post-init-company()
-  (setq company-minimum-prefix-length 1)
-  (global-company-mode t))
+  (setq company-minimum-prefix-length 1))
 
 (defun pomelo/post-init-occur-mode()
   (evilified-state-evilify-map occur-mode-map

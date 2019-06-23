@@ -37,7 +37,11 @@ Each entry is either:
 
 ** 自己的一些更改
 - 在视频中定制occur-mode的时候用的是init，但是自己更改之后报了一个warning，就改成了post-init同样的也将helm中的helm-make改成了post-init
+<<<<<<< HEAD
 - 这里由于savehist报了一个错误，将init-savehist改成了pre-init-savehist,不知道会不会导致什么问题，这里需要注意一下。要是出现什么问题记得进行更改
+=======
+
+>>>>>>> ece2173b366920211994ad02a5da1ff0e591adac
 ** post-init 和pre-init
 - 想要定制某一个package的时候，可以将它加到自己的layer中,像youdao-dictionary一样进行定制
 

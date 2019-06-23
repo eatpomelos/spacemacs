@@ -35,8 +35,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     vimscript
-     javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -44,12 +42,9 @@ values."
      ;; ----------------------------------------------------------------
      pomelo
      html
-     command-log
      ivy
      helm
-     (osx :variables osx-dictionary-dictionary-choice "Simplified Chinese - English"
-          osx-command-as 'super)
-
+     osx
      auto-completion
      (better-defaults :variables better-defaults-move-to-end-of-code-first t) 
      emacs-lisp
@@ -330,8 +325,6 @@ you should place your code here."
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
   (setq ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'arrow)
-  ;;(setq tramp-ssh-controlmaster-options
-  ;;      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
  )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -341,13 +334,8 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
- '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   (quote
-    (cedit 0xc vimrc-mode dactyl-mode 0blayout lispy zoutline command-log-mode less-css-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode 2048-game evernote evernote-mode fasd gulpjs web-mode helm-gitignore helm-css-scss helm-company helm-c-yasnippet flyspell-correct-helm ag alarm-clock tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data youdao-dictionary names chinese-word-at-point reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl wgrep unfill smex smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup ivy-hydra htmlize gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-ivy flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor diff-hl counsel-projectile counsel swiper company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner lv org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup bind-map evil-unimpaired f s dash which-key undo-tree org-plus-contrib ivy hydra async aggressive-indent adaptive-wrap ace-window avy))))
+   '(evernote evernote-mode fasd gulpjs web-mode helm-gitignore helm-css-scss helm-company helm-c-yasnippet flyspell-correct-helm ag alarm-clock tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data youdao-dictionary names chinese-word-at-point reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl wgrep unfill smex smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup ivy-hydra htmlize gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-ivy flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor diff-hl counsel-projectile counsel swiper company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner lv org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup bind-map evil-unimpaired f s dash which-key undo-tree org-plus-contrib ivy hydra async aggressive-indent adaptive-wrap ace-window avy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
