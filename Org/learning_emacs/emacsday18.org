@@ -1,0 +1,17 @@
+* emacsday18
+** how to servive in spacemacs
+
+- cedit的使用，这里还没有学会怎么使用cedit，花一点时间来使用
+
+hello hello-lisp and you hello
+
+ 
+#+begin_src shell
+pkill -SIGUSR2 -i emacs
+toggle-debug-on-quit
+#+end_src
+
+- 使用下面的命令来查看emacs的内存占用情况
+- profiler start
+- profiler report
+  

@@ -11,3 +11,4 @@
 
 
 (global-set-key (kbd "M-s o") 'occur-dwim)
+(global-set-key (kbd "s-d") 'pomelo/my-mark-next-like-this)
