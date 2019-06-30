@@ -34,8 +34,13 @@
     company
     (occur-mode :location built-in)
     (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
+    cedit
     )
   )
+
+(defun pomelo/init-cedit()
+  (use-package cedit
+    :init))
 
 (defun pomelo/init-gulpjs()
   (use-package gulpjs
