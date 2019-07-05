@@ -1,2 +1,66 @@
 * emacsday19
+** COMMENT elisp的一些hack技巧
+hooks
+在某一个模式启动的时候运行一些代码
+#+begin_src emacs-lisp
+(defun my-org-hook)
+(add-hook 'org-mode-hook 'my-org-hook)
+#+end_src
 
+*** 下面是视频中解决一些问题的elisp代码
+子龙大神写的一个函数
+#+begin_src emacs-lisp
+    ;; 子龙大佬写的一个实例代码，这里作为参考
+  (defun my-ranger ()
+    (intertactive)
+    (if golden-ratio-mode
+        (progn
+          (golden-ratio-mode -1)
+          (ranger)
+          (setq golden-ration-previous-enable t))
+      (progn
+        (ranger)
+        (setq golden-ration-previous-enable nil))))
+
+  (defun my-quit-ranger ()
+    (interactive)
+    (if golden-ration-previous-enable
+        (progn
+          (ranger-close)
+          (golden-ratio-mode 1))
+      (ranger-close)))
+
+  (with-eval-after-load 'ranger
+    (progn
+      (define-key ranger-normal-mode-map (kbd "q") 'my-quit-ranger)
+      ))
+  (spacemacs/set-leader-keys "ar" 'my-ranger)
+#+end_src
+论坛中解决分屏的一个方案
+#+begin_src emacs-lisp
+  (defun split-window-left/right->up/down ()
+      "把左右两屏调整为上下两屏.
+    A
+    A|B => -
+    B"
+      (interactive)
+      (let ((buf (current-buffer)))
+        ;;选中左边window
+        （select-window (frame-first-window))
+        ;;删除右侧window
+        (delete-other-windows)
+        ;;分屏、选中下边window
+        (select-window (split-window-below))
+        ;;切换至最近buffer
+        (switch-to-buffer (other-buffer))
+        ;;选中原来buffer所在的window
+        (select-window (get-buffer-window buf)))
+#+end_src
+#+RESULTS:
+: my-ranger
+
+- 按下shift-alt ：可以运行函数 eval-expression
+
+分屏以后下面的信息显示不完整
+
+按下shift-alt ：运行(window-width)可以现实当前窗口的宽度
