@@ -1,22 +1,3 @@
-;;; packages.el --- pomelo layer packages file for Spacemacs.
-;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
-;;
-;; Author: PomeloLy <pomelo@ubuntu>
-;; URL: https://github.com/syl20bnr/spacemacs
-;;
-;; This file is not part of GNU Emacs.
-;;
-;;; License: GPLv3
-
-;;; Commentary:
-
-;; See the Spacemacs documentation and FAQs for instructions on how to implement
-;; a new layer:
-;;
-;;   SPC h SPC layers RET
-;;
-;;
 ;; Briefly, each package to be installed or configured by this layer should be
 ;; added to `pomelo-packages'. Then, for each package PACKAGE:
 ;;
@@ -35,8 +16,13 @@
     (occur-mode :location built-in)
     (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
     cedit
+    lispy
     )
   )
+
+(defun pomelo/init-lispy()
+  (use-package lispy
+    :init))
 
 (defun pomelo/init-cedit()
   (use-package cedit
@@ -61,4 +47,21 @@
   (evilified-state-evilify-map occur-mode-map
     :mode occur-mode)
   )
+
+;; global config
+(global-company-mode t)
+(global-hungry-delete-mode t)
+
+;; some hooks
+(add-hook 'c-mode-hook 'electric-pair-mode t)
+(add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
+
+;; some pravite config
+(defun open-pomelo-config()
+  "open my config file
+use \"fep\" to open my package.el file"
+  (interactive)
+  (find-file "/home/pomelo/.spacemacs.d/layers/pomelo/packages.el"))
+
+(spacemacs/set-leader-keys "fep" 'open-pomelo-config)
 ;;; packages.el ends here

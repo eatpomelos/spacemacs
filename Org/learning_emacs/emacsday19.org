@@ -1,4 +1,5 @@
 * emacsday19
+由于没有将.emacs.d里面的文件纳入版本控制，所以在需要某些配置的时候，不再那边更改，直接在.spacemacs.d下的init.el里面进行更改
 ** COMMENT elisp的一些hack技巧
 hooks
 在某一个模式启动的时候运行一些代码
@@ -56,11 +57,34 @@ hooks
         ;;选中原来buffer所在的window
         (select-window (get-buffer-window buf)))
 #+end_src
-#+RESULTS:
-: my-ranger
-
+解决左右分屏
+#+begin_src emacs-lisp
+  (defadvice org-open-at-point (after my-org-open-at-point activate)
+    (while (> (count-windows) 2)
+      (delete-window (cadr (window-list-1)))))
+#+end_src
 - 按下shift-alt ：可以运行函数 eval-expression
-
 分屏以后下面的信息显示不完整
-
 按下shift-alt ：运行(window-width)可以现实当前窗口的宽度
+
+- 写一个函数来实现简便地替换字符串
+#+begin_src emacs-lisp
+  (defun pomelo/evil-quick-replace (beg end)
+    (interactive "r")
+    (while (evil-visual-state-p)
+      (evil-exit-visual-state)
+      (let ((selection (regexp-quote (buffer-substring-no-properties beg end))))
+        (setq command-string (format "%%s /%s//g" selection))
+        (minibuffer-with-setup-hook
+            ()))))
+#+end_src
+在(interactive "r")这里面的r表示的是region，这个会接收两个参数，分别是当前选中区域的开头和结尾
+这里函数的运行过程是，如果是visual buffer那么就将beg和end选中成为一个region，并且启动evil-ex，在里面填充字符串command-strng
+在此之后将光标向后移动两个字符
+后面有一个字符打不出来，这里代码是不完整的
+
+*** Advice
+- 可以在不修改一个函数的前提下，让这个函数在执行之前、执行之后、执行过程中调用一些额外的代码
+
+- 怎么设置scratch的默认mode？
+
