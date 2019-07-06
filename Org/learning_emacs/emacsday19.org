@@ -85,6 +85,62 @@ hooks
 
 *** Advice
 - 可以在不修改一个函数的前提下，让这个函数在执行之前、执行之后、执行过程中调用一些额外的代码
+#+begin_src emacs-lisp
+    (defun bar (x)
+      (message "in bar")
+      (+ x 1))
 
-- 怎么设置scratch的默认mode？
+  (bar 1)
+    ;; 运行结果是2
+    (defadvice bar (before my-bar-hack activate)
+      (message "before bar"))
+    (bar 2)
+    ;; 运行结果是 before bar 然后再是2,也就是说在执行bar之前会执行我们自己定义的函数的功能
+    (ad-deactivate 'bar)
+    ;;在执行完成上面的语句之后再执行bar函数就不会执行我们自己定义的那句message语句了
+    (ad-activate 'bar)
+    ;; 执行完上面的语句之后又会执行我们自己定义的语句
+    (defadvice bar (after my-bar-hack-2 activate)
+      (message "after bar"))
 
+  (bar 3)
+
+  ;; around 可以在函数执行的过程中执行一个动作
+  ;; small example在执行一个函数的过程中会先执行around定义的功能，注意这里和before的区分
+  (defun foo (x)
+    (* 2 x))
+
+  (defadvice foo (around bar activate)
+    (setq ad-return-value
+          (if (= x 1)
+              42
+            (+1 ad-do-it))))
+
+  (foo 2)
+#+end_src
+这个特性是很有用的，当我们在执行某一个命令的时候，我们可能需要在这个命令执行之前或者之后，绑定某一个动作，这个时候这个特性就很有用了
+
+*** 调试elisp
+- 可以在elisp函数中加入一个debug语句，执行时会进入debug模式
+当处于debug模式的时候:
+c 退出当前的debug中断，继续执行直到遇到下一个error或debug点时才再次进入debug模式
+d 单步执行，会进入函数内部;
+e 求值，结果将会显示在minibuffer里;
+R 与上面的e命令一样，不过它会将求值结果保存在"Debugger-record"这个buffer里;
+q 退出debug，程序交由最上层的emacs接管
+
+这里是一个简单的实例
+#+begin_src emacs-lisp
+  (defun demo()
+    "debug demo function"
+    (interactive)
+    (let ((a "a")
+          (b "value b")
+          (c 1))
+      (debug)
+      (message "middle")
+      (setq c (+ 1 c))
+      (xyz "a")
+      (message "999")
+      ))
+#+end_src
