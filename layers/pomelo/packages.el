@@ -48,10 +48,6 @@
     :mode occur-mode)
   )
 
-;; global config
-(global-company-mode t)
-(global-hungry-delete-mode t)
-
 ;; some hooks
 (add-hook 'c-mode-hook 'electric-pair-mode t)
 (add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
