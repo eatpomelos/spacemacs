@@ -1,0 +1,70 @@
+* emacsday20
+-这期是介绍子龙大神自己的配置
+** The new layer design 
+关于layer的设计
+用了两个layer，一个是和个人的配置很相关的，一个是比较通用的layer
+把相关的配置放在一起比较合适
+可以把layer分开像之前的将lisp文件分开，维护的时候会比较方便，这里可以参考之前老的配置的结构
+包括UI，org，better-defaults，programming等，这里将相关的layer放在不同的文件在自己的主要layer中只需要加载这些layer就行了
+
+- 对于user-config的设计
+对于某些设置需要最后加载的配置可以放在这里，但是尽量保证这里面的内容足够少可以比较方便进行维护，事实上将自己的配置分类进行存放的话
+维护起来很节省时间成本
+对于一些临时的配置也可以暂时放在这里，当这个配置比较稳定的时候，可以对这个配置进行分类进行管理
+
+- 另外一个选项是直接使用子龙山人的配置，经常更新配置
+** Revisit my config layer by layer
+- deft,的使用有必要了解一下,这里添加了这个包，但是没有进行使用，要是不习惯可以暂时先注释掉
+
+放在user-init里的配置
+#+begin_src emacs-lisp
+  (setq socks-server '("Default server" "127.0.0.1" 1080 5))
+  (setq evil-shift-round nil)
+  (setq byte-compile-warnings '(not obsolete))
+#+end_src
+
+放在user-config里的配置
+#+begin_src emacs-lisp
+  ;; 解决org表格里面中英文对齐的问题
+  (when (configuration-layer/layer-usedp 'chinese)
+    (when (and (spacemacs/system-is-linux) window-system)
+      (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16)))
+  ;; 当emacs中选中文本的时候不要进入默认的系统剪切板
+  (fset 'evil-visual-update-x-selection 'ignore)
+
+  (spacemacs|add-company-hook 'text-mode )
+
+  ;; 在所有的text-mode下开启拼写检查
+  (add-hook 'text-mode-hook 'spacemacs/toggle-spelling-checking-on)
+#+end_src
+** better-defaults
+ #+begin_src emacs-lisp
+   ;; 使用SPC-fh的时候将当前打开的buffer添加到列表中去
+       (defun ffap-hexl-mode ()
+         (interactive)
+         (let ((ffap-file-finder 'hexl-find-file))
+           (call-interactively 'ffap)))
+
+       ;; 设置当打开一个打开一个新的文件的时候（在系统中打开）不会重新开启一个新的frame(但是貌似只有在mac中有用)
+       (when (spacemacs/window-system-is-mac)
+         (setq ns-pop-up-frames nil))
+
+       ;; 当输入lambda的时候变成一个符号
+       (global-prettify-symbols-mode 1)
+       ;; 显示一条竖线
+       (setq-default fill-column 80)
+
+       ;;解决经常遇到的一个问题，当在一个字符前面输入一个做括号的时候实际上是不希望自动补全右括号的
+       (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
+
+       ;; 当打开一个大的文件的时候使用另外的模式提升性能
+       (defun spacemacs/check-large-file ()
+         (when (> (buffer-size) 500000)
+           (progn (fundamental-mode)
+                  (hl-line-mode -1))))
+
+       (add-hook 'find-file-hook 'spacemacs/check-large-file)
+
+ #+end_src
+- 这里之前自己有一个误区，就是对layer的理解不是很好，当想启用一个全局的功能的时候，使用的办法是在之前的init文件里面添加global
+语句，其实没有必要.eamcs.d里面的文件其实没有必要改动，在自己的layer里面添加就行了。自己的配置需要好好维护 

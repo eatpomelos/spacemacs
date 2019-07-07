@@ -144,3 +144,54 @@ q 退出debug，程序交由最上层的emacs接管
       (message "999")
       ))
 #+end_src
+
+- 另外一种是使用edebug-defnu来进行调试，但是这里似乎有点问题
+
+*** 如何编写自己的minor-mode 
+#+begin_src emacs-lisp
+  (defun insert-foo ()
+    (interactive)
+    (insert "foo"))
+
+  ;; 下面的keymap定义在自己的minor-mode下的自己的快捷键
+  (define-minor-mode
+    shadowsocks-proxy-mode
+    :global t
+    :init-value nil
+    :lighter " SS"
+    :keymap (let ((map (make-sparse-keymap)))
+              (define-key map (kbd "C-c f") 'insert-foo))
+    (if shadowsocks-proxy-mode
+        (setq url-gateway-method 'socks)
+      (setq url-gateway-method 'native)))
+
+    (define-global-minor-mode
+      global-shadowsocks-proxy-mode shadowsocks-proxy-mode shadowsocks-proxy-mode
+      :group 'shadowsocks-proxy)
+
+
+  ;; 下面的代码是演示一些比较简单的功能，这里就是要展示一些基础的功能
+  (defun my-tes ()
+    "test a programe"
+    (interactive)
+    (setq lov 4)
+    (message "before %s" lov))
+
+  (my-tes)
+#+end_src
+- 要想掌握这个功能要好好看一下下面的博客：how to make an emacs minor mode
+*** 视频中的一些网址
+Ranger与golden ratio不兼容
+https://emacs-china.org/t/ranger-golden-ratio/964
+如何快速把左右两屏调整为上下两屏
+https://emacs-china.org/t/topic/945/2
+多个窗口spaceline显示不全
+https://emacs-china.org/t/spacemacs/389
+怎么设置左右分屏最多为两个
+https://emacs-china.org/t/topic/889/3
+how to make an emacs minor mode
+https://nullprogram.com/blog/2013/02/06/
+elisp defadvice around clarification
+https://stackoverflow.com/questions/21502367/elisp-defadvice-around-clarification
+https://ergoemacs.org/emacs/emacs_avoid_lambda_in_hook.html
+https://emacs-fu.blogspot.com/2008/12/hooks.html

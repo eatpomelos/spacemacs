@@ -45,6 +45,7 @@ values."
      html
      ivy
      helm
+     deft
      osx
      auto-completion
      (better-defaults :variables better-defaults-move-to-end-of-code-first t) 
@@ -307,13 +308,15 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-(setq configuration-layer--elpa-archives
-       '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
-			("org-cn"   . "http://elpa.zilongshanren.com/org/")
-				("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
+  (setq configuration-layer--elpa-archives
+        '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
+			    ("org-cn"   . "http://elpa.zilongshanren.com/org/")
+				  ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
 
-
-)
+  ;; https://github.com/syl20bnr/spacemacs/issues/2705
+  (setq tramp-ssh-controlmaster-options
+        "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -336,7 +339,7 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lispy zoutline vimrc-mode dactyl-mode cedit 0blayout evernote evernote-mode fasd gulpjs web-mode helm-gitignore helm-css-scss helm-company helm-c-yasnippet flyspell-correct-helm ag alarm-clock tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data youdao-dictionary names chinese-word-at-point reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl wgrep unfill smex smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup ivy-hydra htmlize gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-ivy flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor diff-hl counsel-projectile counsel swiper company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner lv org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup bind-map evil-unimpaired f s dash which-key undo-tree org-plus-contrib ivy hydra async aggressive-indent adaptive-wrap ace-window avy)))
+   '(deft lispy zoutline vimrc-mode dactyl-mode cedit 0blayout evernote evernote-mode fasd gulpjs web-mode helm-gitignore helm-css-scss helm-company helm-c-yasnippet flyspell-correct-helm ag alarm-clock tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data youdao-dictionary names chinese-word-at-point reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl wgrep unfill smex smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup ivy-hydra htmlize gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-ivy flyspell-correct flycheck-pos-tip pos-tip flycheck evil-magit magit transient git-commit with-editor diff-hl counsel-projectile counsel swiper company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner lv org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup bind-map evil-unimpaired f s dash which-key undo-tree org-plus-contrib ivy hydra async aggressive-indent adaptive-wrap ace-window avy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

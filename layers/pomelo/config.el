@@ -54,3 +54,19 @@
    '((my-c-mode-font-lock-if0 (0 font-lock-comment-face prepend))) 'add-to-end))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook-if0)
+
+(hungry-delete-mode t)
+
+(electric-pair-mode t)
+(setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
+
+;; 当打开一个大的文件的时候使用另外的模式提升性能
+(defun spacemacs/check-large-file ()
+  (when (> (buffer-size) 500000)
+    (progn (fundamental-mode)
+           (hl-line-mode -1))))
+
+(add-hook 'find-file-hook 'spacemacs/check-large-file)
+
+ ;; 当输入lambda的时候变成一个符号
+(global-prettify-symbols-mode 1)
