@@ -57,7 +57,7 @@
   "open my config file
 use \"fep\" to open my package.el file"
   (interactive)
-  (find-file "/home/pomelo/.spacemacs.d/layers/pomelo/packages.el"))
+  (find-file "~/.spacemacs.d/layers/pomelo/packages.el"))
 
 (spacemacs/set-leader-keys "fep" 'open-pomelo-config)
 ;;; packages.el ends here
