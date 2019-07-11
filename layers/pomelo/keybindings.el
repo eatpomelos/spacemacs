@@ -11,3 +11,7 @@
 
 
 (global-set-key (kbd "M-s o") 'occur-dwim)
+
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-\-") 'er/contract-region)
+(global-set-key (kbd "M-s p") 'iedit-mode)

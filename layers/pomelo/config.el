@@ -55,7 +55,7 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook-if0)
 
-(hungry-delete-mode t)
+;;(hungry-delete-mode t)
 
 (electric-pair-mode t)
 (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
