@@ -20,6 +20,7 @@
     )
   )
 
+
 (defun pomelo/init-lispy()
   (use-package lispy
     :init))
