@@ -1,6 +1,6 @@
 * emacsday19
 由于没有将.emacs.d里面的文件纳入版本控制，所以在需要某些配置的时候，不再那边更改，直接在.spacemacs.d下的init.el里面进行更改
-** COMMENT elisp的一些hack技巧
+** elisp的一些hack技巧
 hooks
 在某一个模式启动的时候运行一些代码
 #+begin_src emacs-lisp
