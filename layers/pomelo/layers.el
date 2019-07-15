@@ -10,4 +10,9 @@
 ;;; License: GPLv3
 
 ;;(configuration-layer/remove-layer )
- 
+(configuration-layer/declare-layers '(
+                                      pomelo-programming
+                                      pomelo-ui
+                                      pomelo-org
+                                      pomelo-better-defaults
+                                      ))
