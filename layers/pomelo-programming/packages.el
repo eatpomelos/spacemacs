@@ -1,22 +1,3 @@
-;;; packages.el --- pomelo-programming layer packages file for Spacemacs.
-;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
-;;
-;; Author: Ubuntu14.04LTS <pomelo@ubuntu>
-;; URL: https://github.com/syl20bnr/spacemacs
-;;
-;; This file is not part of GNU Emacs.
-;;
-;;; License: GPLv3
-
-;;; Commentary:
-
-;; See the Spacemacs documentation and FAQs for instructions on how to implement
-;; a new layer:
-;;
-;;   SPC h SPC layers RET
-;;
-;;
 ;; Briefly, each package to be installed or configured by this layer should be
 ;; added to `pomelo-programming-packages'. Then, for each package PACKAGE:
 ;;
@@ -30,33 +11,46 @@
 ;;; Code:
 
 (defconst pomelo-programming-packages
-  '()
-  "The list of Lisp packages required by the pomelo-programming layer.
+  '(youdao-dictionary
+    company
+    (occur-mode :location built-in)
+    (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
+    lispy
+    cedit
+    )
+  )
 
-Each entry is either:
+(defun pomelo-programming/init-lispy()
+  (use-package lispy
+    :init))
 
-1. A symbol, which is interpreted as a package to be installed, or
+(defun pomelo-programming/init-gulpjs()
+  (use-package gulpjs
+    :init))
 
-2. A list of the form (PACKAGE KEYS...), where PACKAGE is the
-    name of the package to be installed or loaded, and KEYS are
-    any number of keyword-value-pairs.
+(defun pomelo-programming/init-cedit()
+  (use-package cedit
+    :init))
 
-    The following keys are accepted:
 
-    - :excluded (t or nil): Prevent the package from being loaded
-      if value is non-nil
+(defun pomelo-programming/init-youdao-dictionary()
+  (use-package youdao-dictionary
+    :defer t
+    :init
+    (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
+    )
+  )
 
-    - :location: Specify a custom installation location.
-      The following values are legal:
+(defun pomelo-programming/post-init-company()
+  (setq company-minimum-prefix-length 1))
 
-      - The symbol `elpa' (default) means PACKAGE will be
-        installed using the Emacs package manager.
+(defun pomelo-programming/post-init-occur-mode()
+  (evilified-state-evilify-map occur-mode-map
+    :mode occur-mode)
+  )
 
-      - The symbol `local' directs Spacemacs to load the file at
-        `./local/PACKAGE/PACKAGE.el'
-
-      - A list beginning with the symbol `recipe' is a melpa
-        recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
-
+;; some hooks
+;; (add-hook 'c-mode-hook 'electric-pair-mode t)
+(add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
 
 ;;; packages.el ends here
