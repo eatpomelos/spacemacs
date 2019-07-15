@@ -14,4 +14,4 @@
   "open my config file
 use \"fep\" to open my package.el file"
   (interactive)
-  (find-file "~/.spacemacs.d/layers/pomelo/packages.el"))
+  (find-file "~/.spacemacs.d/layers/pomelo/config.el"))
