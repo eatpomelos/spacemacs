@@ -40,3 +40,11 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook-if0)
 ;;highlight end
+
+;; load kbd macro file
+(load-file "/home/gec/.spacemacs.d/layers/pomelo-programming/define.emacs")
+
+;; some hooks
+;; (add-hook 'c-mode-hook 'electric-pair-mode t)
+(add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
+

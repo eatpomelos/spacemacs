@@ -16,4 +16,8 @@
 (global-set-key (kbd "C-\-") 'er/contract-region)
 (global-set-key (kbd "M-s p") 'iedit-mode)
 
+(global-set-key (kbd "<f4>") 'open-my-diary)
+(global-set-key (kbd "<f5>") 'open-my-define-file)
+
 (spacemacs/set-leader-keys "fep" 'open-pomelo-config)
+(spacemacs/set-leader-keys "im" 'insert-kbd-macro)

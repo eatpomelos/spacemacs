@@ -10,3 +10,29 @@
 ;;; License: GPLv3
 
 (global-linum-mode t)
+;; recentf不保存一下后缀的文件
+(defun pomelo-better-defaults/post-init-recentf ()
+  (progn
+    (setq recentf-exclude
+          '("COMMIT_MSG"
+            "COMMIT_EDITMSG"
+            "github.*txt$"
+            "/tmp/"
+            "/ssh:"
+            "/sudo:"
+            "/TAGS$"
+            "/GTAGS$"
+            "/GRAGS$"
+            "/GPATH$"
+            "\\.mkv$"
+            "\\.mp[34]$"
+            "\\.avi$"
+            "\\.pdf$"
+            "\\.sub$"
+            "\\.srt$"
+            "\\.ass$"
+            ".*png$"))
+    (setq recentf-max-saved-items 2048)))
+
+;; 设置scratch缓冲区的默认主模式为emacs-lisp-mode
+(setq dotspacemacs-scratch-mode 'emacs-lisp-mode)
