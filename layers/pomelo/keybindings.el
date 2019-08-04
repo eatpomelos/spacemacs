@@ -21,3 +21,5 @@
 
 (spacemacs/set-leader-keys "fep" 'open-pomelo-config)
 (spacemacs/set-leader-keys "im" 'insert-kbd-macro)
+
+(define-key evil-insert-state-map (kbd "C-x g") 'goto-line)
