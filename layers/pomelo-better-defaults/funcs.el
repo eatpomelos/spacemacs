@@ -15,3 +15,10 @@
 use \"fep\" to open my package.el file"
   (interactive)
   (find-file "~/.spacemacs.d/layers/pomelo/config.el"))
+
+;; 当用swiper查找某一个单词之后，自动将这一行放到屏幕中间
+(defadvice swiper (after pomelo-swiper-hack activate)
+  (recenter-top-bottom))
+
+(defadvice goto-line (after pomelo-goto-line-hack activate)
+  (recenter-top-bottom))

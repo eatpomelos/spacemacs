@@ -22,4 +22,10 @@
 (spacemacs/set-leader-keys "fep" 'open-pomelo-config)
 (spacemacs/set-leader-keys "im" 'insert-kbd-macro)
 
-(define-key evil-insert-state-map (kbd "C-x g") 'goto-line)
+(define-key evil-insert-state-map (kbd "C-c g") 'goto-line)
+
+;; 设置代码折叠相关的快捷键p开头表示pomelo的快捷键
+(define-key evil-normal-state-map (kbd "C-c sa") 'hs-show-all)
+(define-key evil-normal-state-map (kbd "C-c ha") 'hs-hide-all)
+(define-key evil-normal-state-map (kbd "C-c sb") 'hs-show-block)
+(define-key evil-normal-state-map (kbd "C-c hb") 'hs-hide-block)

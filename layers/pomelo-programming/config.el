@@ -48,3 +48,8 @@
 ;; (add-hook 'c-mode-hook 'electric-pair-mode t)
 (add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
 
+;; 设置代码折叠
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
+(add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
+(add-hook 'perl-mode-hook 'hs-minor-mode)
+(add-hook 'sh-mode-hook 'hs-minor-mode)

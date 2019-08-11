@@ -31,8 +31,10 @@
             "\\.sub$"
             "\\.srt$"
             "\\.ass$"
-            ".*png$"))))
+            ".*png$"
+            ".*bmp$"))))
 
 ;; 设置scratch缓冲区的默认主模式为emacs-lisp-mode
 (setq dotspacemacs-scratch-mode 'emacs-lisp-mode)
+
 (setq recentf-max-saved-items 30)
