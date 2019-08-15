@@ -38,3 +38,5 @@
 (setq dotspacemacs-scratch-mode 'emacs-lisp-mode)
 
 (setq recentf-max-saved-items 30)
+
+(setq-default fill-column 100)

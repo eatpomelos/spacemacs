@@ -22,3 +22,6 @@ use \"fep\" to open my package.el file"
 
 (defadvice goto-line (after pomelo-goto-line-hack activate)
   (recenter-top-bottom))
+
+(defadvice spacemacs/helm-project-smart-do-search (after pomelo-helm-project-search-hack activate)
+  (recenter-top-bottom))
