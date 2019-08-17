@@ -31,23 +31,58 @@
 ;; ;; ccls + lsp
 ;; (defun pomelo-programming/init-ccls ()
 ;;   (use-package ccls
+;;     :defer 1
 ;;     :init
-;;     :hook ((c-mode c++-mode objc-mode) .
-;;            (lambda () (require 'ccls) (lsp))))
-;;   (setq ccls-executable "/home/gec/.spacemacs.d/ccls"))
+;;     (defun mege-lang-ccls-enable ()
+;;       (condition-case nil)
+;;       (lsp-ccls-enable)
+;;       (user-error nil))
+;;     (add-hook 'c-mode-hook #'magew-lang-ccls-enable)
+;;     (add-hook 'c++-mode-hook #'magew-lang-ccls-enable)
+;;     :config
+;;     (setq ccls-sem-highlight-method 'font-lock)
+;;     (ccls-use-default-rainbow-sem-highlight)
+;;     (setq ccls-executable "/home/gec/.spacemacs.d/ccls")
+;;     (setq ccls-extra-init-params '(
+;;                                    :completion (:detailedLabel t)
+;;                                    :diagnostics (frequencyMs 5000)
+;;                                    :index (:reparseForDependency 1)))
+;;     (with-eval-after-load 'projectile
+;;       (progn (add-to-list 'projectile-globally-ignored-directories ".ccls-cache")
+;;              (setq projectile-project-root-files-top-down-recurring
+;;                    (append '("compile_commands.json"
+;;                              ".ccls_root")
+;;                            projectile-project-root-files-top-down-recurring))))))
 
 ;; ;; c/c++ mode configuration
 ;; (defun pomelo-programming/init-lsp-mode ()
 ;;   (use-package lsp-mode
+;;     :defer 1
 ;;     :init
-;;     :hook (c-mode . lsp)
-;;     :commands lsp))
+;;     :config
+;;     (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
 
 ;; (defun pomelo-programming/init-lsp-ui ()
-;;     (use-package lsp-ui :commands lsp-ui-mode))
+;;   (use-package lsp-ui
+;;     :after (lsp-mode)
+;;     :hook (lsp-mode . lsp-ui-mode)
+;;     :config
+;;     (setq lsp-ui-sideline-enable nil
+;;           lsp-ui-sideline-show-symbol nil
+;;           lsp-ui-sideline-show-symbol nil
+;;           lsp-ui-sideline-ignore-duplicate t
+;;           lsp-ui-doc-max-width 50
+;;           )))
 
 ;; (defun pomelo-programming/init-company-lsp ()
-;;     (use-package company-lsp :commands company-lsp))
+;;   (use-package company-lsp
+;;     :after (company lsp-mode)
+;;     :init
+;;     (setq company-lsp-cache-candidates nil)
+;;     (add-hook 'lsp-mode-hook
+;;               (lambda ()
+;;                 (add-to-list (make-local-variable 'company-backends)
+;;                              'company-lsp)))))
 
 ;; (defun pomelo-programming/init-helm-lsp ()
 ;;     (use-package helm-lsp :commands helm-lsp))
