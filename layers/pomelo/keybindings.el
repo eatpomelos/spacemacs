@@ -28,3 +28,6 @@
 (define-key evil-normal-state-map (kbd "C-c ha") 'hs-hide-all)
 (define-key evil-normal-state-map (kbd "C-c sb") 'hs-show-block)
 (define-key evil-normal-state-map (kbd "C-c hb") 'hs-hide-block)
+
+;; 编辑相关
+(global-set-key (kbd "C-c v") 'set-mark-command)

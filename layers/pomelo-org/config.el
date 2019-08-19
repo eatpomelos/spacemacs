@@ -19,4 +19,4 @@
 
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
-(setq org-agenda-files '("~/.spacemacs.d/"))
+(setq org-agenda-files '("~/pomelo/org/"))
