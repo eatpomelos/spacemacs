@@ -11,7 +11,13 @@
 ;;; Code:
 
 (defconst pomelo-better-defaults-packages
-  '())
+  '(
+    pomodoro
+    ))
+
+(defun pomelo-better-defaults/init-pomodoro ()
+  (require 'pomodoro)
+  (pomodoro-add-to-mode-line))
 
 
 ;;; packages.el ends here
