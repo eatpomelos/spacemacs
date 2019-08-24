@@ -43,3 +43,11 @@
 
 ;; 选中之后可以直接替换
 (delete-selection-mode t)
+
+;; 设置elpa-mirror的路径
+(setq package-archives '(("myelpa" . "~/myelpa/")))
+(setq elpamr-default-output-directory "~/myelpa")
+;; 设置github仓库,我的github地址:https://github.com/eatpomelos/myelpa.git
+(add-to-list 'package-archives
+             '("myelpa" . "https://raw.githubusercontent.com/eatpomelos/myelpa/master/"))
+(setq elpamr-debug t)

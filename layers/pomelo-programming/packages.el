@@ -16,7 +16,6 @@
     (occur-mode :location built-in)
     (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
     lispy
-    cedit
     ;; lsp configuration
     ;; lsp-mode
     ;; lsp-ui
@@ -103,11 +102,6 @@
 (defun pomelo-programming/init-gulpjs()
   (use-package gulpjs
     :init))
-
-(defun pomelo-programming/init-cedit()
-  (use-package cedit
-    :init))
-
 
 (defun pomelo-programming/init-youdao-dictionary()
   (use-package youdao-dictionary

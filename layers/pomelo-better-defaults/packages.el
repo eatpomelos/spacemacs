@@ -13,11 +13,15 @@
 (defconst pomelo-better-defaults-packages
   '(
     pomodoro
+    elpa-mirror
     ))
 
 (defun pomelo-better-defaults/init-pomodoro ()
-  (require 'pomodoro)
+  (use-package pomodoro)
   (pomodoro-add-to-mode-line))
 
+(defun pomelo-better-defaults/init-elpa-mirror ()
+  (use-package elpa-mirror
+    :init))
 
 ;;; packages.el ends here
