@@ -2,5 +2,5 @@
 (defun open-my-define-file ()
   "open my kbd macro file"
   (interactive)
-  (setq my-kbd-macro "/home/gec/.spacemacs.d/layers/pomelo-programming/define.emacs")
+  (setq my-kbd-macro "~/.spacemacs.d/layers/pomelo-programming/define.emacs")
   (find-file my-kbd-macro))
