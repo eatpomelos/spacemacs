@@ -44,8 +44,10 @@
 ;; 选中之后可以直接替换
 (delete-selection-mode t)
 
-;; 设置elpa-mirror的路径
-(setq package-archives '(("myelpa" . "~/myelpa/")))
+;; 设置elpa-mirror的路径,下面的第一行会将之前的仓库覆盖掉，可能会出现一些问题，这里用了后面的用法
+;; (setq package-archives '(("myelpa" . "~/myelpa/")))
+(add-to-list 'package-archives
+             '(("myelpa" . "~/myelpa/")))
 (setq elpamr-default-output-directory "~/myelpa")
 ;; 设置github仓库,我的github地址:https://github.com/eatpomelos/myelpa.git
 (add-to-list 'package-archives

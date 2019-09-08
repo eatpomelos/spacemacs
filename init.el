@@ -44,6 +44,8 @@ values."
      pomelo
      html
      ivy
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode)
      helm
      deft
      osx

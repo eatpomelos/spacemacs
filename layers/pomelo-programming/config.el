@@ -54,3 +54,8 @@
 (add-hook 'perl-mode-hook 'hs-minor-mode)
 (add-hook 'sh-mode-hook 'hs-minor-mode)
 
+;; 补充C/C++的补全选项
+(add-hook 'c++-mode-hook
+          (lambda ()
+            ;; (setq company-backends '(company-yasnippet)
+            (setq company-backends '(lsp-ccls))))

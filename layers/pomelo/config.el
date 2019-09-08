@@ -37,3 +37,8 @@
 
  ;; 当输入lambda的时候变成一个符号
 (global-prettify-symbols-mode 1)
+
+;; 设置snippets 这里暂时有点问题之后再进行完善
+;; (add-hook 'c++-mode-hook
+;;           (lambda ()
+;;             (setq company-backends '(company-yasnippet))))
