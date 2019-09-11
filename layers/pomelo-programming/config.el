@@ -58,4 +58,6 @@
 (add-hook 'c++-mode-hook
           (lambda ()
             ;; (setq company-backends '(company-yasnippet)
-            (setq company-backends '(lsp-ccls))))
+            ;; (setq company-backends '(lsp-ccls))
+            (setq company-clang-arguments
+                  '("-std=c++1z"))))
