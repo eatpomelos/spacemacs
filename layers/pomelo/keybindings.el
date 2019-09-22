@@ -17,7 +17,7 @@
 (global-set-key (kbd "M-s p") 'iedit-mode)
 
 (global-set-key (kbd "<f4>") 'open-my-list)
-(global-set-key (kbd "<f5>") 'open-my-define-file)
+(global-set-key (kbd "<f5>") 'open-my-note)
 
 (spacemacs/set-leader-keys "fep" 'open-pomelo-config)
 (spacemacs/set-leader-keys "im" 'insert-kbd-macro)
