@@ -10,7 +10,7 @@
 ;;; License: GPLv3
 
 (global-linum-mode t)
-;; recentf不保存一下后缀的文件
+;; recentf不保存一下后缀的文件,这里要注意的是在emacs中正则表达式的'\'要写成'\\'
 (defun pomelo-better-defaults/post-init-recentf ()
   (progn
     (setq recentf-exclude
@@ -33,7 +33,8 @@
             "\\.ass$"
             ".*png$"
             ".*bmp$"
-            ".*bd$"))))
+            ".*db$"
+            "init\\.el"))))
 
 ;; 设置scratch缓冲区的默认主模式为emacs-lisp-mode
 (setq dotspacemacs-scratch-mode 'emacs-lisp-mode)
@@ -54,3 +55,5 @@
 (add-to-list 'package-archives
              '("myelpa" . "https://raw.githubusercontent.com/eatpomelos/myelpa/master/"))
 (setq elpamr-debug t)
+
+'(company-show-numbers t)

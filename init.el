@@ -54,6 +54,7 @@ values."
      (better-defaults :variables better-defaults-move-to-end-of-code-first t) 
      emacs-lisp
      git
+     (gtags :disabled-for clojure emacs-lisp javascript latex python shell-scripts)
      markdown
      org
      spell-checking

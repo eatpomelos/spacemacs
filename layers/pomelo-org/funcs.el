@@ -7,3 +7,8 @@
   "open note file."
   (interactive)
   (find-file "~/pomelo/org/note.org"))
+
+(defun open-my-learning ()
+  "open note file."
+  (interactive)
+  (find-file "~/pomelo/org/learning.org"))
