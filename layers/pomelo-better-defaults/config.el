@@ -56,4 +56,4 @@
              '("myelpa" . "https://raw.githubusercontent.com/eatpomelos/myelpa/master/"))
 (setq elpamr-debug t)
 
-'(company-show-numbers t)
+;; '(company-show-numbers t)
