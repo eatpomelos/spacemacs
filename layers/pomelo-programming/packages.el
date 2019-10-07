@@ -33,6 +33,7 @@
     :defer t
     :init
     (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
+    (spacemacs/set-leader-keys "os" 'youdao-dictionary-play-voice-at-point)
     )
   )
 

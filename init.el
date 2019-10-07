@@ -49,7 +49,6 @@ values."
             c-c++-default-mode-for-headers 'c++-mode)
      helm
      deft
-     osx
      auto-completion
      (better-defaults :variables better-defaults-move-to-end-of-code-first t) 
      emacs-lisp
@@ -57,6 +56,8 @@ values."
      (gtags :disabled-for clojure emacs-lisp javascript latex python shell-scripts)
      markdown
      org
+     ;; (osx :variables osx-dictionary-dictionary-choice "Simplified Chinese - English"
+     ;;      osx-command-as 'super)
      spell-checking
      syntax-checking
      (spacemacs-layouts :variables layouts-enable-autosave nil

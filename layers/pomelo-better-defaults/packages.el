@@ -24,4 +24,13 @@
   (use-package elpa-mirror
     :init))
 
+;; (defun pomelo-better-defaults/init-osx-dictionary ()
+;;   (use-package osx-dictionary
+;;     :init
+;;     (progn
+;;       (evilified-state-evilify osx-dictionary-mode osx-dictionary-mode-map)
+;;       (setq osx-dictionary-use-chinese-text-segmentation t)
+;;       (global-set-key (kbd "C-c d") 'osx-dictionary-search-pointer)
+;;       )))
+
 ;;; packages.el ends here
