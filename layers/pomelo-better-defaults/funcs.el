@@ -14,7 +14,7 @@
   "open my config file
 use \"fep\" to open my package.el file"
   (interactive)
-  (find-file "~/.spacemacs.d/layers/pomelo/config.el"))
+  (find-file "~/.spacemacs.d/layers"))
 
 ;; 当用swiper查找某一个单词之后，自动将这一行放到屏幕中间
 (defadvice swiper (after pomelo-swiper-hack activate)

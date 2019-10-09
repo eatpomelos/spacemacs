@@ -24,10 +24,10 @@
 
 
 ;; 设置代码折叠相关的快捷键p开头表示pomelo的快捷键
-(define-key evil-normal-state-map (kbd "C-c sa") 'hs-show-all)
-(define-key evil-normal-state-map (kbd "C-c ha") 'hs-hide-all)
-(define-key evil-normal-state-map (kbd "C-c sb") 'hs-show-block)
-(define-key evil-normal-state-map (kbd "C-c hb") 'hs-hide-block)
+(define-key prog-mode-map (kbd "C-c sa") 'hs-show-all)
+(define-key prog-mode-map (kbd "C-c ha") 'hs-hide-all)
+(define-key prog-mode-map (kbd "C-c sb") 'hs-show-block)
+(define-key prog-mode-map (kbd "C-c hb") 'hs-hide-block)
 
 ;; 编辑相关
 (global-set-key (kbd "C-c v") 'set-mark-command)
