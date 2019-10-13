@@ -15,4 +15,5 @@
                                       pomelo-ui
                                       pomelo-org
                                       pomelo-better-defaults
+                                      pomelo-misc
                                       ))

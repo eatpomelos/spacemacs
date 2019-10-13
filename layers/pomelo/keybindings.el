@@ -32,3 +32,5 @@
 ;; 编辑相关
 (global-set-key (kbd "C-c v") 'set-mark-command)
 (global-set-key (kbd "C-c C-l") 'goto-line)
+(global-set-key (kbd "C-c -") 'text-scale-decrease)
+(global-set-key (kbd "C-c +") 'text-scale-increase)
