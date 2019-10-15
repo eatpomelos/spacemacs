@@ -45,7 +45,7 @@
 (load-file "~/.spacemacs.d/layers/pomelo-programming/define.emacs")
 
 ;; some hooks
-;; (add-hook 'c-mode-hook 'electric-pair-mode t)
+(add-hook 'c-mode-hook 'electric-pair-mode t)
 (add-hook 'emacs-lisp-mode-hook 'lispy-mode t)
 
 ;; 设置代码折叠
