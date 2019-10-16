@@ -59,5 +59,3 @@
 
 '(company-show-numbers t)
 
-(global-hungry-delete-mode t)
-(global-company-mode t)
