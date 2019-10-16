@@ -14,7 +14,42 @@
   '(
     pomodoro
     elpa-mirror
+    (recentf :location built-in)
     ))
+;; (defconst pomelo-better-defaults-packages
+;;   '(
+;;     (dired-mode :location built-in)
+;;     (profiler :location built-in)
+;;     (recentf :location built-in)
+;;     )
+;;   )
+;; recentf不保存以下后缀的文件,这里要注意的是在emacs中正则表达式的'\'要写成'\\'
+(defun pomelo-better-defaults/post-init-recentf ()
+  (progn
+    (setq recentf-exclude
+          '("COMMIT_MSG"
+            "COMMIT_EDITMSG"
+            "github.*txt$"
+            "/tmp/"
+            "/ssh:"
+            "/sudo:"
+            "/TAGS$"
+            "/GTAGS$"
+            "/GRAGS$"
+            "/GPATH$"
+            "\\.mkv$"
+            "\\.mp[34]$"
+            "\\.avi$"
+            "\\.pdf$"
+            "\\.sub$"
+            "\\.srt$"
+            "\\.ass$"
+            ".*png$"
+            ".*bmp$"
+            ".*db$"
+            "init\\.el$"
+            "/\\.spacemacs\\.d"))))
+
 
 (defun pomelo-better-defaults/init-pomodoro ()
   (use-package pomodoro)

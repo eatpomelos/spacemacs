@@ -10,33 +10,8 @@
 ;;; License: GPLv3
 
 (global-linum-mode t)
-;; recentf不保存以下后缀的文件,这里要注意的是在emacs中正则表达式的'\'要写成'\\'
-(defun pomelo-better-defaults/post-init-recentf ()
-  (progn
-    (setq recentf-exclude
-          '("COMMIT_MSG"
-            "COMMIT_EDITMSG"
-            "github.*txt$"
-            "/tmp/"
-            "/ssh:"
-            "/sudo:"
-            "/TAGS$"
-            "/GTAGS$"
-            "/GRAGS$"
-            "/GPATH$"
-            "\\.mkv$"
-            "\\.mp[34]$"
-            "\\.avi$"
-            "\\.pdf$"
-            "\\.sub$"
-            "\\.srt$"
-            "\\.ass$"
-            ".*png$"
-            ".*bmp$"
-            ".*db$"
-            "init\\.el$"
-            "/\\.spacemacs\\.d"))))
 
+;; 这下面的两行并没有启用，这里暂时用其他方法替代
 ;; 设置scratch缓冲区的默认主模式为emacs-lisp-mode
 (setq dotspacemacs-scratch-mode 'emacs-lisp-mode)
 
