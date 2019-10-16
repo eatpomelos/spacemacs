@@ -38,3 +38,7 @@
                                             ("7str" "\\([^\"]+?\\)\"")))
 
 (setq user-mail-address "2845748931@qq.com")
+
+(use-package edit-server
+  :ensure t
+  :config (edit-server-start))
