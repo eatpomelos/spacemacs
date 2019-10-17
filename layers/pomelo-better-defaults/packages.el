@@ -12,7 +12,6 @@
 
 (defconst pomelo-better-defaults-packages
   '(
-    pomodoro
     elpa-mirror
     (recentf :location built-in)
     ))
@@ -50,10 +49,6 @@
             "init\\.el$"
             "/\\.spacemacs\\.d"))))
 
-
-(defun pomelo-better-defaults/init-pomodoro ()
-  (use-package pomodoro)
-  (pomodoro-add-to-mode-line))
 
 (defun pomelo-better-defaults/init-elpa-mirror ()
   (use-package elpa-mirror

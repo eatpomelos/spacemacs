@@ -16,6 +16,26 @@ use \"fep\" to open my package.el file"
   (interactive)
   (find-file "~/.spacemacs.d/layers"))
 
+;; 当打开一个大的文件的时候使用另外的模式提升性能
+(defun spacemacs/check-large-file ()
+  (when (> (buffer-size) 500000)
+    (progn (fundamental-mode)
+           (hl-line-mode -1))))
+
+(defun occur-dwim ()
+  "Call `occur' with a sane default."
+  (interactive)
+  (push (if (region-active-p)
+	          (buffer-substring-no-properties
+	           (region-beginning)
+	           (region-end))
+	        (let ((sym (thing-at-point 'symbol)))
+	          (when (stringp sym)
+              (regexp-quote sym))))
+	      regexp-history)
+  (call-interactively 'occur))
+
+
 ;; 当用swiper查找某一个单词之后，自动将这一行放到屏幕中间
 (defadvice swiper (after pomelo-swiper-hack activate)
   (recenter-top-bottom))

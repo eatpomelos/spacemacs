@@ -1,37 +1,13 @@
-;;; config.el --- Better Emacs Defaults Layer configuration variables File
-;;
-;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
-;;
-;; Author: Thomas de Beauchêne <thomas.de.beauchene@gmail.com>
-;; URL: https://github.com/syl20bnr/spacemacs
-;;
-;; This file is not part of GNU Emacs.
-;;
-;;; License: GPLv3
+(defvar org-agenda-dir ""
+  "gtd org files location")
 
-(defun occur-dwim ()
-  "Call `occur' with a sane default."
-  (interactive)
-  (push (if (region-active-p)
-	          (buffer-substring-no-properties
-	           (region-beginning)
-	           (region-end))
-	        (let ((sym (thing-at-point 'symbol)))
-	          (when (stringp sym)
-              (regexp-quote sym))))
-	      regexp-history)
-  (call-interactively 'occur))
+(if (spacemacs/system-is-mswindows)
+    (setq org-agenda-dir "f:/org-notes")
+  (setq org-agenda-dir "~/.spacemacs.d/Org"))
 
-;;(hungry-delete-mode t)
+;; 备注，设置dir 之后完成自定义的agenda设置
 
-;; (electric-pair-mode t)
 (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
-
-;; 当打开一个大的文件的时候使用另外的模式提升性能
-(defun spacemacs/check-large-file ()
-  (when (> (buffer-size) 500000)
-    (progn (fundamental-mode)
-           (hl-line-mode -1))))
 
 (add-hook 'find-file-hook 'spacemacs/check-large-file)
 
