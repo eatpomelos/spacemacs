@@ -1,9 +1,17 @@
 (defvar org-agenda-dir ""
   "gtd org files location")
 
+(defvar macro-file-path ""
+  "macro file location")
+
+
 (if (spacemacs/system-is-mswindows)
-    (setq org-agenda-dir "f:/org-notes")
+    (setq org-agenda-dir "d:/org-notes")
   (setq org-agenda-dir "~/.spacemacs.d/Org"))
+
+(if (spacemacs/system-is-mswindows)
+    (setq macro-file-path "d:/org-notes/define.emacs")
+  (setq macro-file-path "~/.spacemacs.d/layers/pomelo-programming/define.emacs"))
 
 ;; 备注，设置dir 之后完成自定义的agenda设置
 

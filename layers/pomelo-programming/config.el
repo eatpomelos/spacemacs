@@ -42,7 +42,7 @@
 ;;highlight end
 
 ;; load kbd macro file
-(load-file "~/.spacemacs.d/layers/pomelo-programming/define.emacs")
+(load-file macro-file-path)
 
 ;; some hooks
 (add-hook 'c-mode-hook 'electric-pair-mode t)
