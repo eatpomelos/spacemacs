@@ -35,6 +35,11 @@
       (add-to-list 'package-archives
                    '(("myelpa" . "~/myelpa/")))
       (setq elpamr-default-output-directory "~/myelpa")))
+
+(setq configuration-layer--elpa-archives
+      '(("melpa" . "http://elpa.emacs-china.org/melpa/")
+        ("org"   . "http://elpa.emacs-china.org/org/")
+        ("gnu"   . "http://elpa.emacs-china.org/gnu/")))
 ;; 设置github仓库,我的github地址:https://github.com/eatpomelos/myelpa.git
 (add-to-list 'package-archives
              '("myelpa" . "https://raw.githubusercontent.com/eatpomelos/myelpa/master/"))

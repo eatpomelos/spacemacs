@@ -14,7 +14,7 @@
   '(youdao-dictionary
     company
     (occur-mode :location built-in)
-    (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
+    ;; (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
     lispy
     )
   )
@@ -24,9 +24,9 @@
   (use-package lispy
     :init))
 
-(defun pomelo-programming/init-gulpjs()
-  (use-package gulpjs
-    :init))
+;; (defun pomelo-programming/init-gulpjs()
+;;   (use-package gulpjs
+;;     :init))
 
 (defun pomelo-programming/init-youdao-dictionary()
   (use-package youdao-dictionary
