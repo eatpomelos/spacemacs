@@ -39,3 +39,8 @@
 
 (setq user-mail-address "2845748931@qq.com")
 
+
+;; (if (spacemacs/system-is-mswindows)
+;;     (progn
+;;       '(ispell-dictionary "american")
+;;       '(ispell-program-name "d:/Install/babun/.babun/cygwin/bin/aspell.exe")))

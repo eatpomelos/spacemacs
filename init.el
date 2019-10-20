@@ -4,7 +4,9 @@
 
 (defun dotspacemacs/layers ()
   ;;use aspell as ispell backend
-  (setq-default ispell-program-name "aspell")
+  (if (spacemacs/system-is-mswindows)
+      (setq-default ispell-program-name "d:/Install/babun/.babun/cygwin/bin/aspell.exe")
+    (setq-default ispell-program-name "aspell"))
   ;;use American English as ispell default dictionary
   (ispell-change-dictionary "american" t)
   "Configuration Layers declaration.
@@ -35,6 +37,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     lua
+     windows-scripts
      python
      vimscript
      ;; ----------------------------------------------------------------
