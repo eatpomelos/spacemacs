@@ -3,7 +3,7 @@
   (interactive)
   (let ((mnote-path nil))
     (if (spacemacs/system-is-mswindows)
-        (setq note-path "d:/org-note/mynote.org")
+        (setq mnote-path "d:/org-notes/note.org")
       (setq mnote-path "~/pomelo/org/note.org"))
     (find-file mnote-path))
   )

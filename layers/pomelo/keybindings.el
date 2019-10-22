@@ -18,7 +18,7 @@
 
 (global-set-key (kbd "<f5>") 'open-my-note)
 
-(spacemacs/set-leader-keys "fep" 'open-pomelo-config)
+(spacemacs/set-leader-keys "fep" 'pomelo/open-config)
 (spacemacs/set-leader-keys "im" 'insert-kbd-macro)
 
 
@@ -33,3 +33,5 @@
 (global-set-key (kbd "C-c C-l") 'goto-line)
 (global-set-key (kbd "C-c -") 'text-scale-decrease)
 (global-set-key (kbd "C-c +") 'text-scale-increase)
+
+

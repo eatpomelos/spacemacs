@@ -54,7 +54,7 @@ values."
      helm
      deft
      auto-completion
-     (better-defaults :variables better-defaults-move-to-end-of-code-first t) 
+     (better-defaults :variables better-defaults-move-to-end-of-code-first t)
      emacs-lisp
      git
      (gtags :disabled-for clojure emacs-lisp javascript latex python shell-scripts)

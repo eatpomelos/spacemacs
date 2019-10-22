@@ -30,7 +30,7 @@
       (add-to-list 'package-archives
                    '(("myelpa" . "d:/myelpa/")))
       (setq elpamr-default-output-directory "d:/myelpa")
-      )
+      (add-to-list 'exec-path "D:/Install/babun/.babun/cygwin/bin"))
     (progn
       (add-to-list 'package-archives
                    '(("myelpa" . "~/myelpa/")))

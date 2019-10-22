@@ -16,8 +16,29 @@
     (occur-mode :location built-in)
     ;; (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
     lispy
+    minimap
+    yasnippet-snippets
     )
   )
+
+(defun pomelo-programming/init-yasnippet-snippets ()
+  (use-package yasnippet-snippets
+    :config
+    (progn
+      (if (spacemacs/system-is-mswindows)
+          (setq yas--default-user-snippets-dir "d:/Emacs/.spacemacs.d/snippets")
+        (setq yas--default-user-snippets-dir "~/.spacemacs.d/snippets")
+        ))))
+
+;; code minimap
+(defun pomelo-programming/init-minimap ()
+  (use-package minimap
+    :init
+    ;; :map prog-mode-map
+    ;; (("C-p mp"). minimap-mode)
+    :config
+    (define-key prog-mode-map (kbd "C-p mp") 'minimap-mode)
+    ))
 
 ;; lisp configuration
 (defun pomelo-programming/init-lispy()

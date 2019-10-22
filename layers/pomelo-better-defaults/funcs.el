@@ -10,7 +10,7 @@
 ;;; License: GPLv3
 
 ;; some pravite config
-(defun open-pomelo-config()
+(defun pomelo/open-config()
   "open my config file
 use \"fep\" to open my package.el file"
   (interactive)
