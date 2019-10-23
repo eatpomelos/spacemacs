@@ -1,9 +1,0 @@
-# -*- mode: c++-mode -*-
-# name: class
-# key: class
-# --
-class $1
-{
-  public:
-  private:
-};

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name:hello
+# key: hello
+# --
+printf("hello world\n");

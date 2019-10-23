@@ -34,4 +34,4 @@
 (global-set-key (kbd "C-c -") 'text-scale-decrease)
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 
-
+(global-set-key (kbd "<f9>") 'loop-alpha)

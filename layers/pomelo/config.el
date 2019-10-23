@@ -4,13 +4,13 @@
 (defvar macro-file-path ""
   "macro file location")
 
-(defvar win-exe-home-path "d:/Install/babun/.babun/cygwin/bin")
-
 
 (if (spacemacs/system-is-mswindows)
     (progn
       (setq org-agenda-dir "d:/org-notes")
-      (setq macro-file-path "d:/Emacs/.spacemacs.d/layers/pomelo-programming/define.emacs"))
+      (setq macro-file-path "d:/Emacs/.spacemacs.d/layers/pomelo-programming/define.emacs")
+      (defvar win-exe-home-path "d:/Install/babun/.babun/cygwin/bin")
+      )
   (progn
     (setq org-agenda-dir "~/.spacemacs.d/Org")
     (setq macro-file-path "~/.spacemacs.d/layers/pomelo-programming/define.emacs")
@@ -25,3 +25,5 @@
  ;; 当输入lambda的时候变成一个符号
 (global-prettify-symbols-mode 1)
 
+(global-company-mode t)
+(global-hungry-delete-mode t)
