@@ -27,3 +27,4 @@
 
 (global-company-mode t)
 (global-hungry-delete-mode t)
+(electric-pair-mode t)

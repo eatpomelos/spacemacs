@@ -42,4 +42,3 @@ NO-TEMPLATE is non-nil."
     (setq alpha-list (cdr (append alpha-list (list h))))
     )
   )
-

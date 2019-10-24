@@ -60,12 +60,6 @@
             ;; (setq company-backends '(company-yasnippet)
             ;; (setq company-backends '(lsp-ccls))
             (setq company-clang-arguments
-                  '("-std=c++1z"))))
-
-;; 设置snippets 这里暂时有点问题之后再进行完善
-;; 怎么开启多种补全，还是说智能覆盖掉
-(add-hook 'c++-mode-hook
-          (lambda ()
-            ;; (setq company-backends (cons company-backends '(company-yasnippet)))
-            (setq company-backends '(company-yasnippet))
+                  '("-std=c++1z"))
+            (define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)
             ))
