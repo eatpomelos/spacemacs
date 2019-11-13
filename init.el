@@ -52,8 +52,8 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode)
      helm
-     deft
      auto-completion
+     deft
      (better-defaults :variables better-defaults-move-to-end-of-code-first t)
      emacs-lisp
      git

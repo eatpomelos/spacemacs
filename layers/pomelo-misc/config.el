@@ -9,7 +9,6 @@
 ;;
 ;;; License: GPLv3
 
-
 (define-abbrev-table 'global-abbrev-table '(
 
                                             ;; math/unicode symbols

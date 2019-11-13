@@ -14,6 +14,15 @@
   '(
     pomodoro
     (org :location built-in)
+    deft
+    ))
+
+(defun pomelo-org/post-init-deft ()
+  (progn
+    (setq deft-use-filter-string-for-filename t)
+    (setq deft-recursive t)
+    ;; (setq deft-extensions "org")
+    (setq deft-directory deft-dir)
     ))
 
 (defun pomelo-org/post-init-org ()
