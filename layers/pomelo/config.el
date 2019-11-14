@@ -32,3 +32,6 @@
 (global-company-mode t)
 (global-hungry-delete-mode t)
 (electric-pair-mode t)
+
+;; 设置垃圾回收的阈值，加快启动的加载速度
+(setq gc-cons-threshold (* 2 1000 1000))

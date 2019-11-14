@@ -12,7 +12,7 @@
 
 (defconst pomelo-better-defaults-packages
   '(
-    elpa-mirror
+    ;; elpa-mirror
     (recentf :location built-in)
     ))
 ;; (defconst pomelo-better-defaults-packages
@@ -50,9 +50,9 @@
             "/\\.spacemacs\\.d"))))
 
 
-(defun pomelo-better-defaults/init-elpa-mirror ()
-  (use-package elpa-mirror
-    :init))
+;; (defun pomelo-better-defaults/init-elpa-mirror ()
+;;   (use-package elpa-mirror
+;;     :init))
 
 ;; (defun pomelo-better-defaults/init-osx-dictionary ()
 ;;   (use-package osx-dictionary

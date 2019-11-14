@@ -17,20 +17,21 @@
     ;; (gulpjs :location (recipe :fetcher github :repo "zilongshanren/emacs-gulpjs"))
     lispy
     minimap
-    yasnippet-snippets
+    ;; yasnippet-snippets
     )
   )
 
-(defun pomelo-programming/init-yasnippet-snippets ()
-  (use-package yasnippet-snippets
-    :config
-    (progn
-      (if (spacemacs/system-is-mswindows)
-          (setq yas--default-user-snippets-dir "d:/Emacs/.spacemacs.d/snippets")
-        (setq yas--default-user-snippets-dir "~/.spacemacs.d/snippets")
-        )
-      (yas-load-directory yas--default-user-snippets-dir)
-      )))
+;; (defun pomelo-programming/init-yasnippet-snippets ()
+;;   (use-package yasnippet-snippets
+;;     :config
+;;     (progn
+;;       (if (spacemacs/system-is-mswindows)
+;;           (setq yas--default-user-snippets-dir "d:/Emacs/.spacemacs.d/snippets")
+;;         (setq yas--default-user-snippets-dir "~/.spacemacs.d/snippets")
+;;         )
+;;       (add-to-list 'yas-snippet-dirs yas--default-user-snippets-dir)
+;;       (yas-load-directory yas--default-user-snippets-dir)
+;;       )))
 
 ;; code minimap
 (defun pomelo-programming/init-minimap ()

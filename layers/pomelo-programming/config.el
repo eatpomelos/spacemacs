@@ -63,3 +63,12 @@
                   '("-std=c++1z"))
             (define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)
             ))
+
+;; yasnippets config
+(eval-after-load 'yasnippet
+  '(progn
+     (let ((my-yasnippets "d:/Emacs/.spacemacs.d/snippets"))
+       (add-to-list 'yas-snippet-dirs my-yasnippets)
+       )
+     (yas-reload-all)
+     ))
