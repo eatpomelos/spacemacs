@@ -9,7 +9,6 @@
 ;;
 ;;; License: GPLv3
 
-
 (global-set-key (kbd "M-s o") 'occur-dwim)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -35,3 +34,7 @@
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 
 (global-set-key (kbd "<f9>") 'loop-alpha)
+
+;; 编程相关的一些快捷键
+(define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)
+(define-key emacs-lisp-mode-map (kbd "C-c eb") 'eval-buffer)

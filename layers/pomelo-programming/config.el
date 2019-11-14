@@ -61,7 +61,6 @@
             ;; (setq company-backends '(lsp-ccls))
             (setq company-clang-arguments
                   '("-std=c++1z"))
-            (define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)
             ))
 
 ;; yasnippets config

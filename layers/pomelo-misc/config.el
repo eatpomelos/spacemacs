@@ -43,3 +43,7 @@
 ;;     (progn
 ;;       '(ispell-dictionary "american")
 ;;       '(ispell-program-name "d:/Install/babun/.babun/cygwin/bin/aspell.exe")))
+
+;; 避免在切换不同文件按之后生成很多的buffer
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))

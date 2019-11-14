@@ -12,3 +12,8 @@
                                 "⑫" "⑬" "⑭"
                                 "⑮" "⑯" "⑰"
                                 "⑱" "⑲" "⑳"))
+
+;; 一些暂时写来用的配置，但是不一定需要整合到emacs的配置中,defadvice的格式
+;; (defadvice FUNCTION (CLASS NAME [POSITION] [ARGLIST] FLAG...)
+;;   [DOCSTRING] [INTERACTIVE-FORM]
+;;   BODY...)
