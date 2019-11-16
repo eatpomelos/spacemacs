@@ -50,6 +50,9 @@
               ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
                "* %?\n  %i\n %U"
                :empty-lines 1)
+              ("e" "Emacs notes" entry (file+headline org-agenda-file-note "Emacs notes")
+               "* %?\n  %i\n %U"
+               :empty-lines 1)
               ("i" "Ideas" entry (file+headline org-agenda-file-note "Ideas")
                "* %?\n  %i\n %U")
               ("w" "work" entry (file+headline org-agenda-file-gtd "Work")
