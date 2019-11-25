@@ -11,5 +11,10 @@
 ;;; Code:
 
 (defconst pomelo-ui-packages
-  '()
+  '(
+    ;; doom-themes
+    )
   )
+
+;; (defun pomelo-ui/init-doom-themes ()
+;;   (use-package doom-themes))

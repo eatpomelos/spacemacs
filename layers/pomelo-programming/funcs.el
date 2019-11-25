@@ -29,16 +29,3 @@ NO-TEMPLATE is non-nil."
          snippet-directories)
     (if (and (not no-template) yas-new-snippet-default)
         (yas-expand-snippet yas-new-snippet-default))))
-
-;;set transparent effect
-(setq alpha-list '((100 100) (75 45) (45 15)))
-(defun loop-alpha ()
-  (interactive)
-  (let ((h (car alpha-list))) ;; head value will set to
-    ((lambda (a ab)
-       (set-frame-parameter (selected-frame) 'alpha (list a ab))
-       (add-to-list 'default-frame-alist (cons 'alpha (list a ab)))
-       ) (car h) (car (cdr h)))
-    (setq alpha-list (cdr (append alpha-list (list h))))
-    )
-  )

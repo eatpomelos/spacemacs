@@ -40,7 +40,7 @@
     ;; :map prog-mode-map
     ;; (("C-p mp"). minimap-mode)
     :config
-    (define-key prog-mode-map (kbd "C-p mp") 'minimap-mode)
+    (define-key prog-mode-map (kbd "C-c mp") 'minimap-mode)
     ))
 
 ;; lisp configuration
