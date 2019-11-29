@@ -63,8 +63,9 @@
                :empty-lines 1)
               ("j" "Journal Entry"
                entry (file+datetree org-agenda-file-journal)
-               "* %?"
-               :empty-lines 1)))
+               "* %? %^g"
+               :empty-lines 1)
+              ))
 
       ;;An entry without a cookie is treated just like priority ' B '.
       ;;So when create new task, they are default 重要且紧急

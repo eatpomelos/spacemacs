@@ -35,7 +35,6 @@ use \"fep\" to open my package.el file"
 	      regexp-history)
   (call-interactively 'occur))
 
-
 ;; 当用swiper查找某一个单词之后，自动将这一行放到屏幕中间
 (defadvice swiper (after pomelo-swiper-hack activate)
   (recenter-top-bottom))
@@ -45,3 +44,4 @@ use \"fep\" to open my package.el file"
 
 (defadvice spacemacs/helm-project-smart-do-search (after pomelo-helm-project-search-hack activate)
   (recenter-top-bottom))
+
