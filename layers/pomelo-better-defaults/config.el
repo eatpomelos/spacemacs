@@ -15,8 +15,6 @@
 ;; 设置scratch缓冲区的默认主模式为emacs-lisp-mode
 (setq dotspacemacs-scratch-mode 'emacs-lisp-mode)
 
-(setq recentf-max-saved-items 30)
-
 (setq-default fill-column 100)
 
 ;; 选中之后可以直接替换

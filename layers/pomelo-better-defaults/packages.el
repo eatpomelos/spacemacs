@@ -14,11 +14,12 @@
   '(
     ;; elpa-mirror
     (recentf :location built-in)
+    (profiler :location built-in)
     ))
+
 ;; (defconst pomelo-better-defaults-packages
 ;;   '(
 ;;     (dired-mode :location built-in)
-;;     (profiler :location built-in)
 ;;     (recentf :location built-in)
 ;;     )
 ;;   )
@@ -47,20 +48,12 @@
             ".*bmp$"
             ".*db$"
             "init\\.el$"
-            "/\\.spacemacs\\.d"))))
+            "/\\.spacemacs\\.d"))
+        (setq recentf-max-saved-items 30)))
 
-
-;; (defun pomelo-better-defaults/init-elpa-mirror ()
-;;   (use-package elpa-mirror
-;;     :init))
-
-;; (defun pomelo-better-defaults/init-osx-dictionary ()
-;;   (use-package osx-dictionary
-;;     :init
-;;     (progn
-;;       (evilified-state-evilify osx-dictionary-mode osx-dictionary-mode-map)
-;;       (setq osx-dictionary-use-chinese-text-segmentation t)
-;;       (global-set-key (kbd "C-c d") 'osx-dictionary-search-pointer)
-;;       )))
+(defun pomelo-better-defaults/init-profiler ()
+  (use-package profiler
+    :init
+    (evilified-state-evilify profiler-report-mode profiler-report-mode-map)))
 
 ;;; packages.el ends here

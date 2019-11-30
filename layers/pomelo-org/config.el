@@ -25,6 +25,7 @@
 ;;   [DOCSTRING] [INTERACTIVE-FORM]
 ;;   BODY...)
 
+;; 定义一个函数,在需要编写英语单词的时候,打开本地的文件用来进行单词的补全
 (defvar pomelo-local-dictionary nil
   "defun the path of local english dictionary.")
 

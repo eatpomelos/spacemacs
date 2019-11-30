@@ -18,8 +18,16 @@
     lispy
     minimap
     ;; yasnippet-snippets
+    vc-msg
     )
   )
+;; vc-msg用来查看当前提交项目中的提交信息
+(defun pomelo-programming/init-vc-msg ()
+  (use-package vc-msg
+    :init
+    :config
+    (global-set-key (kbd "C-c mi") 'vc-msg-show)
+    (spacemacs/set-leader-keys "sm" 'vc-msg-show)))
 
 ;; (defun pomelo-programming/init-yasnippet-snippets ()
 ;;   (use-package yasnippet-snippets
@@ -36,7 +44,7 @@
 ;; code minimap
 (defun pomelo-programming/init-minimap ()
   (use-package minimap
-    :init
+    :defer t
     ;; :map prog-mode-map
     ;; (("C-p mp"). minimap-mode)
     :config
@@ -46,7 +54,8 @@
 ;; lisp configuration
 (defun pomelo-programming/init-lispy()
   (use-package lispy
-    :init))
+    :init
+    :defer t))
 
 ;; (defun pomelo-programming/init-gulpjs()
 ;;   (use-package gulpjs
