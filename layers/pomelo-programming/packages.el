@@ -24,7 +24,6 @@
 ;; vc-msg用来查看当前提交项目中的提交信息
 (defun pomelo-programming/init-vc-msg ()
   (use-package vc-msg
-    :init
     :config
     (global-set-key (kbd "C-c mi") 'vc-msg-show)
     (spacemacs/set-leader-keys "sm" 'vc-msg-show)))
@@ -54,7 +53,6 @@
 ;; lisp configuration
 (defun pomelo-programming/init-lispy()
   (use-package lispy
-    :init
     :defer t))
 
 ;; (defun pomelo-programming/init-gulpjs()

@@ -15,7 +15,11 @@
     ;; elpa-mirror
     (recentf :location built-in)
     (profiler :location built-in)
+    esup
     ))
+
+(defun pomelo-better-defaults/init-esup ()
+  (use-package esup))
 
 ;; (defconst pomelo-better-defaults-packages
 ;;   '(
@@ -49,7 +53,7 @@
             ".*db$"
             "init\\.el$"
             "/\\.spacemacs\\.d"))
-        (setq recentf-max-saved-items 30)))
+    (setq recentf-max-saved-items 30)))
 
 (defun pomelo-better-defaults/init-profiler ()
   (use-package profiler
