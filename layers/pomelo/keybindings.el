@@ -11,8 +11,12 @@
 
 (global-set-key (kbd "M-s o") 'occur-dwim)
 
-(global-set-key (kbd "C-=") 'er/expand-region)
-(global-set-key (kbd "C-\-") 'er/contract-region)
+;; 下面的绑定是因为想在所有的模式下这个快捷键绑定的都是这个函数
+(bind-key* "C-=" 'er/expand-region)
+(bind-key* "C-c k" 'which-key-show-top-level)
+(bind-key* "C-c /" 'company-files)
+(bind-key* "C-\-" 'er/contract-region)
+
 (global-set-key (kbd "M-s p") 'iedit-mode)
 
 (global-set-key (kbd "<f5>") 'open-my-note)
