@@ -15,11 +15,15 @@
     ;; elpa-mirror
     (recentf :location built-in)
     (profiler :location built-in)
-    esup
+    ;; esup
+    benchmark-init
     ))
 
-(defun pomelo-better-defaults/init-esup ()
-  (use-package esup))
+(defun pomelo-better-defaults/init-benchmark-init ()
+  (use-package benchmark-init))
+
+;; (defun pomelo-better-defaults/init-esup ()
+;;   (use-package esup))
 
 ;; (defconst pomelo-better-defaults-packages
 ;;   '(

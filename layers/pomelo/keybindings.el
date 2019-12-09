@@ -38,7 +38,7 @@
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 (global-set-key (kbd "M-=") 'count-words)
 
-(global-set-key (kbd "<f9>") 'loop-alpha)
+(bind-key* "<f9>" 'loop-alpha)
 
 ;; 编程相关的一些快捷键
 (define-key prog-mode-map (kbd "C-c ,") 'company-yasnippet)

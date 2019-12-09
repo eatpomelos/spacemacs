@@ -29,8 +29,11 @@
  ;; 当输入lambda的时候变成一个符号
 (global-prettify-symbols-mode 1)
 
-(global-company-mode t)
-(global-hungry-delete-mode t)
+;; 这里由于在27以下的版本运行会直接报错，这里加上条件
+(if (>= (string-to-number emacs-version) 27.0)
+    (progn
+      (global-company-mode t)
+      (global-hungry-delete-mode t)))
 (electric-pair-mode t)
 
 ;; 设置垃圾回收的阈值，加快启动的加载速度

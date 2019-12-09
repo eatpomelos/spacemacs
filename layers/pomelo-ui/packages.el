@@ -13,8 +13,16 @@
 (defconst pomelo-ui-packages
   '(
     ;; doom-themes
+    doom-modeline
     )
   )
 
+(defun pomelo-ui/init-doom-modeline ()
+  (use-package doom-modeline
+    :ensure t
+    :hook (after-init . doom-modeline-mode)))
+
 ;; (defun pomelo-ui/init-doom-themes ()
-;;   (use-package doom-themes))
+;;   (use-package doom-themes
+;;     :defer 4
+;;     ))

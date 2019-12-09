@@ -1,9 +1,9 @@
 ;; 为了偷懒这里，设置一个文件来保存宏
-(defun open-my-define-file ()
-  "open my kbd macro file"
-  (interactive)
-  (setq my-kbd-macro "~/.spacemacs.d/layers/pomelo-programming/define.emacs")
-  (find-file my-kbd-macro))
+;; (defun open-my-define-file ()
+;;   "open my kbd macro file"
+;;   (interactive)
+;;   (setq my-kbd-macro "~/.spacemacs.d/layers/pomelo-programming/define.emacs")
+;;   (find-file my-kbd-macro))
 
 ;; 定义一个自己函数用来建立snippet,这个函数是参考的源文件中的函数，中间有很多东西还不是很清楚
 (defun pomelo/yas-new-snippet (&optional no-template)
