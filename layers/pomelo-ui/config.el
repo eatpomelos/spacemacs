@@ -8,3 +8,10 @@
       '("" invocation-name " pomelo - " (:eval (if (buffer-file-name)
 						    (abbreviate-file-name (buffer-file-name))
 						    "%b"))))
+
+;; Datetime format
+(setq
+ ;; display-time-day-and-date t
+ display-time-24hr-format t)
+
+(display-time-mode)

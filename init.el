@@ -76,22 +76,23 @@ values."
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages
-   '(vi-tilde-fringe spaceline
-     ;; magit-gh-pulls magit-gitflow  evil-mc realgud tern company-tern
-     ;; evil-args evil-ediff evil-exchange evil-unimpaired
-     ;; evil-indent-plus volatile-highlights smartparens
-     ;; spaceline holy-mode skewer-mode rainbow-delimiters
-     ;; highlight-indentation eyebrowse ws-butler
-     ;; smooth-scrolling livid-mode git-gutter git-gutter-fringe  evil-escape
-     ;; leuven-theme gh-md evil-lisp-state spray lorem-ipsum symon
-     ;; ac-ispell ace-jump-mode auto-complete auto-dictionary
-     ;; clang-format define-word google-translate disaster epic
-     ;; fancy-battery org-present orgit orglue spacemacs-theme
-     ;; helm-flyspell flyspell-correct-helm clean-aindent-mode
-     ;; helm-c-yasnippet ace-jump-helm-line helm-make magithub
-     ;; helm-themes helm-swoop helm-spacemacs-help smeargle
-     ;; ido-vertical-mode flx-ido company-quickhelp ivy-rich helm-purpose
-
+   '(
+     ;;参照子龙山人的配置删掉的一些包
+     vi-tilde-fringe spaceline magit-gh-pulls
+     magit-gitflow  evil-mc realgud tern company-tern
+     evil-args evil-ediff evil-exchange evil-unimpaired
+     evil-indent-plus volatile-highlights smartparens
+     holy-mode skewer-mode rainbow-delimiters
+     highlight-indentation eyebrowse ws-butler
+     smooth-scrolling livid-mode git-gutter git-gutter-fringe
+     evil-escape leuven-theme gh-md evil-lisp-state spray lorem-ipsum symon
+     ac-ispell ace-jump-mode auto-complete auto-dictionary
+     clang-format define-word google-translate disaster epic
+     fancy-battery org-present orgit orglue spacemacs-theme
+     helm-flyspell flyspell-correct-helm clean-aindent-mode
+     helm-c-yasnippet ace-jump-helm-line helm-make magithub
+     helm-themes helm-swoop helm-spacemacs-help smeargle
+     ido-vertical-mode flx-ido company-quickhelp ivy-rich helm-purpose
      )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.

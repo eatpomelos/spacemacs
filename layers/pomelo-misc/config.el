@@ -48,9 +48,3 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
-;; Datetime format
-(setq display-time-day-and-date t
-      display-time-24hr-format t)
-
-(display-time-mode)
-
