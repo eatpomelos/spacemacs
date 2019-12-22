@@ -1,3 +1,0 @@
-* emacsday8
-
-** 安装cask
