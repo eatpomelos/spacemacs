@@ -32,10 +32,10 @@
 
 (setq pomelo-local-dictionary "~/pomelo/english/english-words.txt")
 
-(defun pomelo-load-localdictionary ()
+(defun pomelo|load-localdictionary ()
   "Load local dictionary to complement."
   (interactive)
   (find-file-read-only pomelo-local-dictionary)
   (spacemacs/alternate-buffer))
 
-(global-set-key (kbd "C-c d") 'pomelo-load-localdictionary)
+(global-set-key (kbd "C-c d") 'pomelo|load-localdictionary)
