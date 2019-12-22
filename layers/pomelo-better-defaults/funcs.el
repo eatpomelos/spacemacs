@@ -45,3 +45,7 @@ use \"fep\" to open my package.el file"
 (defadvice spacemacs/helm-project-smart-do-search (after pomelo-helm-project-search-hack activate)
   (recenter-top-bottom))
 
+;; 当关闭一个buffer的时候，如果当前的window 数大于1则删除这个window
+(defadvice spacemacs/kill-this-buffer (after pomelo-kill-buffer-hack activate)
+  (if (> (count-windows) 1)
+      (spacemacs/delete-window)))
