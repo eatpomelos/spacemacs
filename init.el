@@ -337,9 +337,11 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
-			    ("org-cn"   . "http://elpa.zilongshanren.com/org/")
-				  ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
+        '( ;; ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+           ;; ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+           ("melpa" . "http://elpa.emacs-china.org/melpa/")
+           ("org"   . "http://elpa.emacs-china.org/org/")
+           ("gnu"   . "http://elpa.emacs-china.org/gnu/")))
 
   ;; https://github.com/syl20bnr/spacemacs/issues/2705
   (setq tramp-ssh-controlmaster-options

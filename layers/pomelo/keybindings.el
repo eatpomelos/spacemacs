@@ -16,6 +16,7 @@
 (bind-key* "C-c k" 'which-key-show-top-level)
 (bind-key* "C-c /" 'company-files)
 (bind-key* "C-\-" 'er/contract-region)
+(bind-key* "C-r" 'delete-backward-char)
 
 (global-set-key (kbd "M-s p") 'iedit-mode)
 
@@ -37,6 +38,8 @@
 (global-set-key (kbd "C-c -") 'text-scale-decrease)
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 (global-set-key (kbd "M-=") 'count-words)
+;; (define-key global-map (kbd "C-s") 'my-swiper-search)
+(define-key global-map (kbd "C-s") 'spacemacs/swiper-region-or-symbol)
 
 (bind-key* "<f9>" 'loop-alpha)
 

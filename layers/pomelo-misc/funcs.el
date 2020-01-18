@@ -15,3 +15,10 @@
 (add-hook 'kill-emacs-hook #'pomelo|save-scratch)
 (add-hook 'after-init-hook #'pomelo|recover-scratch)
 
+;; 参照子龙的代码，这里不适用是因为直接用 spacemacs/swiper-region-or-symbol 比较符合我自己想要的结果
+(defun my-swiper-search (p)
+  (interactive "P")
+  (let ((current-prefix-arg nil))
+    (call-interactively
+     (if p #'spacemacs/swiper-region-or-symbol
+       #'swiper))))
