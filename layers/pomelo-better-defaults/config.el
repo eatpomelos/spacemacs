@@ -44,4 +44,3 @@
 (setq elpamr-debug t)
 
 '(company-show-numbers t)
-

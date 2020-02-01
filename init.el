@@ -48,7 +48,7 @@ values."
      ;; ----------------------------------------------------------------
      pomelo
      html
-     ivy
+     (ivy :variables ivy-initial-inputs-alist nil)
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode)
      helm
@@ -92,7 +92,7 @@ values."
      helm-flyspell flyspell-correct-helm clean-aindent-mode
      helm-c-yasnippet ace-jump-helm-line helm-make magithub
      helm-themes helm-swoop helm-spacemacs-help smeargle
-     ido-vertical-mode flx-ido company-quickhelp ivy-rich helm-purpose
+     ido-vertical-mode flx-ido company-quickhelp helm-purpose
      )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
