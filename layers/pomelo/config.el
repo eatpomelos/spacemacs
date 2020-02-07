@@ -15,7 +15,7 @@
       (defvar win-exe-home-path "d:/Install/babun/.babun/cygwin/bin")
       )
   (progn
-    (setq org-agenda-dir "~/.spacemacs.d/Org")
+    (setq org-agenda-dir "~/pomelo/agenda/")
     (setq macro-file-path "~/.spacemacs.d/layers/pomelo-programming/define.emacs")
     (setq deft-dir "~/pomelo/org-notes/")
     ))

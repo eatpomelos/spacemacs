@@ -56,6 +56,7 @@
             ".*bmp$"
             ".*db$"
             "init\\.el$"
+            "/agenda/"
             "/\\.spacemacs\\.d"))
     (setq recentf-max-saved-items 500)))
 
