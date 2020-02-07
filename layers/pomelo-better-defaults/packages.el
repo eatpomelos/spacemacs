@@ -57,7 +57,7 @@
             ".*db$"
             "init\\.el$"
             "/\\.spacemacs\\.d"))
-    (setq recentf-max-saved-items 30)))
+    (setq recentf-max-saved-items 500)))
 
 (defun pomelo-better-defaults/init-profiler ()
   (use-package profiler

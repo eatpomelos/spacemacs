@@ -9,9 +9,9 @@
 
 (if (spacemacs/system-is-mswindows)
     (progn
-      (setq org-agenda-dir "d:/org-notes")
+      (setq org-agenda-dir "d:/org-notes/agenda/")
       (setq macro-file-path "d:/Emacs/.spacemacs.d/layers/pomelo-programming/define.emacs")
-      (setq deft-dir "d:/org-notes/")
+      (setq deft-dir "d:/org-notes/notes/")
       (defvar win-exe-home-path "d:/Install/babun/.babun/cygwin/bin")
       )
   (progn
