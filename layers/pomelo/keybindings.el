@@ -38,7 +38,8 @@
 (global-set-key (kbd "C-c -") 'text-scale-decrease)
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 (global-set-key (kbd "M-=") 'count-words)
-;; (define-key global-map (kbd "C-s") 'my-swiper-search)
+
+
 (define-key global-map (kbd "C-s") 'spacemacs/swiper-region-or-symbol)
 
 (bind-key* "<f9>" 'loop-alpha)

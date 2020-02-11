@@ -23,24 +23,24 @@
 ;; 设置elpa-mirror的路径,下面的第一行会将之前的仓库覆盖掉，可能会出现一些问题，这里用了后面的用法
 ;; (setq package-archives '(("myelpa" . "~/myelpa/")))
 
-(if (spacemacs/system-is-mswindows)
-    (progn
-      (add-to-list 'package-archives
-                   '(("myelpa" . "d:/myelpa/")))
-      (setq elpamr-default-output-directory "d:/myelpa")
-      (add-to-list 'exec-path "D:/Install/babun/.babun/cygwin/bin"))
-    (progn
-      (add-to-list 'package-archives
-                   '(("myelpa" . "~/myelpa/")))
-      (setq elpamr-default-output-directory "~/myelpa")))
+;;(if (spacemacs/system-is-mswindows)
+;;    (progn
+;;      (add-to-list 'package-archives
+;;                   '(("myelpa" . "d:/myelpa/")))
+;;      (setq elpamr-default-output-directory "d:/myelpa")
+;;      (add-to-list 'exec-path "D:/Install/babun/.babun/cygwin/bin"))
+;;    (progn
+;;      (add-to-list 'package-archives
+;;                   '(("myelpa" . "~/myelpa/")))
+;;      (setq elpamr-default-output-directory "~/myelpa")))
 
 (setq configuration-layer--elpa-archives
       '(("melpa" . "http://elpa.emacs-china.org/melpa/")
         ("org"   . "http://elpa.emacs-china.org/org/")
         ("gnu"   . "http://elpa.emacs-china.org/gnu/")))
 ;; 设置github仓库,我的github地址:https://github.com/eatpomelos/myelpa.git
-(add-to-list 'package-archives
-             '("myelpa" . "https://raw.githubusercontent.com/eatpomelos/myelpa/master/"))
+;;(add-to-list 'package-archives
+;;             '("myelpa" . "https://raw.githubusercontent.com/eatpomelos/myelpa/master/"))
 (setq elpamr-debug t)
 
 '(company-show-numbers t)

@@ -21,6 +21,7 @@
     vc-msg
     )
   )
+
 ;; vc-msg用来查看当前提交项目中的提交信息
 (defun pomelo-programming/init-vc-msg ()
   (use-package vc-msg

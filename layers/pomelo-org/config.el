@@ -30,12 +30,11 @@
 (defvar pomelo-local-dictionary nil
   "defun the path of local english dictionary.")
 
-(setq pomelo-local-dictionary "~/pomelo/english/english-words.txt")
-
 (defun pomelo|load-localdictionary ()
   "Load local dictionary to complement."
   (interactive)
-  (find-file-read-only pomelo-local-dictionary)
-  (spacemacs/alternate-buffer))
+  (let ((pomelo-local-dictionary "~/pomelo/english/english-words.txt"))
+      (find-file-read-only pomelo-local-dictionary)
+    (spacemacs/alternate-buffer)))
 
 (global-set-key (kbd "C-c d") 'pomelo|load-localdictionary)

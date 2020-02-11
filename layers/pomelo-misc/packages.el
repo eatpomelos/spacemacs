@@ -3,7 +3,23 @@
     edit-server
     ivy-rich
     keyfreq
+    evil
     ))
+
+(defun pomelo-misc/post-init-evil ()
+  (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+  (evil-leader/set-key
+    "ci" 'evilnc-comment-or-uncomment-lines
+    "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+    "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
+    "cc" 'evilnc-copy-and-comment-lines
+    "cp" 'evilnc-comment-or-uncomment-paragraphs
+    "cr" 'comment-or-uncomment-region
+    "cv" 'evilnc-toggle-invert-comment-line-by-line
+    "."  'evilnc-copy-and-comment-operator
+    "\\" 'evilnc-comment-operator ; if you prefer backslash key
+    )
+  )
 
 ;; 安装keyfreq 来测试自己的按键的效率
 (defun pomelo-misc/init-keyfreq ()
