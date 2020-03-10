@@ -39,6 +39,7 @@
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 (global-set-key (kbd "M-=") 'count-words)
 
+(spacemacs/set-leader-keys "sp" 'counsel-rg)
 
 (define-key global-map (kbd "C-s") 'spacemacs/swiper-region-or-symbol)
 
